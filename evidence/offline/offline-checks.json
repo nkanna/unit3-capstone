@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "tests_run": 38,
+  "failures": 0,
+  "errors": 0,
+  "provenance": "offline_mock_checks",
+  "live_aws_calls": 0,
+  "live_llm_calls": 0,
+  "required_validator_cases": [
+    {
+      "sql": "SELECT COUNT(*) FROM clients;",
+      "expected_valid": true,
+      "actual": {
+        "valid": true,
+        "reason": "OK"
+      },
+      "passed": true
+    },
+    {
+      "sql": "DROP TABLE clients;",
+      "expected_valid": false,
+      "actual": {
+        "valid": false,
+        "reason": "Blocked: only SELECT queries are permitted; query must begin with SELECT."
+      },
+      "passed": true
+    },
+    {
+      "sql": "SELECT deleted_at FROM projects;",
+      "expected_valid": true,
+      "actual": {
+        "valid": true,
+        "reason": "OK"
+      },
+      "passed": true
+    },
+    {
+      "sql": "SELECT * FROM clients; DROP TABLE clients;",
+      "expected_valid": false,
+      "actual": {
+        "valid": false,
+        "reason": "Blocked: multiple statements or extra statement delimiters detected."
+      },
+      "passed": true
+    },
+    {
+      "sql": "SELECT * FROM clients; SELECT * FROM projects;",
+      "expected_valid": false,
+      "actual": {
+        "valid": false,
+        "reason": "Blocked: multiple statements or extra statement delimiters detected."
+      },
+      "passed": true
+    },
+    {
+      "sql": "dElEtE\n\tFROM projects;",
+      "expected_valid": false,
+      "actual": {
+        "valid": false,
+        "reason": "Blocked: only SELECT queries are permitted; query must begin with SELECT."
+      },
+      "passed": true
+    }
+  ],
+  "source_manifest_sha256": "9e9503a8cbe0a851e075200f40b65c7d203bde7790200be5cb8a47ef7fbad3f1"
+}

@@ -1,0 +1,273 @@
+{
+  "success": true,
+  "keys": {
+    "sql_agent": [
+      "answer",
+      "metadata",
+      "sources",
+      "success"
+    ],
+    "retrieval_agent": [
+      "answer",
+      "metadata",
+      "sources",
+      "success"
+    ]
+  },
+  "results": {
+    "sql_agent": {
+      "success": true,
+      "answer": "## Active Projects Count\n\nWe currently have **4 active projects**.",
+      "sources": [
+        "SQL: SELECT COUNT(*) AS active_project_count FROM projects WHERE status = 'active';"
+      ],
+      "metadata": {
+        "status": "ANSWERED",
+        "validation": "PASSED",
+        "row_count": 1,
+        "execution_attempted": true,
+        "token_usage": [
+          {
+            "component": "sql_generation",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 1986,
+            "output_tokens": 22,
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 1986,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "output_tokens": 22,
+              "service_tier": "standard"
+            }
+          },
+          {
+            "component": "sql_interpretation",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 99,
+            "output_tokens": 17,
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 99,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "output_tokens": 17,
+              "service_tier": "standard"
+            }
+          }
+        ],
+        "sql": "SELECT COUNT(*) AS active_project_count FROM projects WHERE status = 'active';",
+        "columns": [
+          "active_project_count"
+        ],
+        "rows": [
+          [
+            4
+          ]
+        ],
+        "truncated": false,
+        "answerable": true
+      }
+    },
+    "retrieval_agent": {
+      "success": true,
+      "answer": "Eligible employees may claim up to **$500 per year** toward home office equipment such as desks, chairs, monitor arms, and lighting, submitted through the standard expense reimbursement process with itemized receipts. [Source 1]",
+      "sources": [
+        "remote-work-policy.pdf"
+      ],
+      "metadata": {
+        "draft_answer": "Eligible employees may claim up to **$500 per year** toward home office equipment such as desks, chairs, monitor arms, and lighting, submitted through the standard expense reimbursement process with itemized receipts. [Source 1]",
+        "citation_check": {
+          "passed": true,
+          "cited_numbers": [
+            1
+          ],
+          "exact_fallback": false,
+          "factual_support_verified": false,
+          "note": "Format/range heuristic only; manually verify each claim against its cited excerpt."
+        },
+        "citation_sources": [
+          {
+            "label": "Source 1",
+            "document": "remote-work-policy.pdf",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+            "document_id": "09f3b27eec09484e-c29bc21432fa36732f995c30-2",
+            "page_number": 1,
+            "chunk_number": 2
+          }
+        ],
+        "token_usage": {
+          "component": "retrieval_generation",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 1735,
+          "output_tokens": 55,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 1735,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 55,
+            "service_tier": "standard"
+          }
+        },
+        "answerable": true,
+        "manual_review_required": true,
+        "status": "ANSWERED",
+        "chunks": [
+          {
+            "id": "09f3b27eec09484e-c29bc21432fa36732f995c30-2",
+            "score": 0.8146155,
+            "chunk_number": 2,
+            "ingestion_id": "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+            "content": "consecutive business days should notify\ntheir manager in advance so that core-hour expectations can be temporarily adjusted.\n4. Equipment and Security\nThe company will provide a laptop, external monitor, and VPN access for approved remote\nemployees. All company data must remain on company-issued devices and must never be stored on\npersonal cloud storage accounts, personal email, or removable media. Employees connecting from\npublic Wi-Fi networks, such as those in cafes or airports, are required to use the company VPN at all\ntimes.\nLost or stolen equipment must be reported to IT Security within four hours of discovery so that\ndevice credentials can be revoked and remote wipe procedures initiated.\n5. Home Office Stipend\nEligible employees may claim up to $500 per year toward home office equipment such as desks,\nchairs, monitor arms, and lighting, submitted through the standard expense reimbursement process\nwith itemized receipts.",
+            "document_id": "09f3b27eec09484e-c29bc21432fa36732f995c30-2",
+            "document_name": "remote-work-policy.pdf"
+          },
+          {
+            "id": "09f3b27eec09484e-c29bc21432fa36732f995c30-3",
+            "score": 0.7589787,
+            "chunk_number": 3,
+            "ingestion_id": "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+            "content": "toward home office equipment such as desks,\nchairs, monitor arms, and lighting, submitted through the standard expense reimbursement process\nwith itemized receipts. Stipend claims for the current calendar year must be submitted no later than\nDecember 15, and unused stipend amounts do not roll over to the following year.\n6. Performance and Review\nAcme Consulting - Remote Work Policy - Page 1",
+            "document_id": "09f3b27eec09484e-c29bc21432fa36732f995c30-3",
+            "document_name": "remote-work-policy.pdf"
+          },
+          {
+            "id": "09f3b27eec09484e-c29bc21432fa36732f995c30-4",
+            "score": 0.6824968,
+            "chunk_number": 4,
+            "ingestion_id": "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+            "page_number": 2,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+            "content": "Remote work arrangements are reviewed annually by the employee's manager as part of the\nstandard performance cycle, and may be modified or revoked at any time if availability,\ncommunication, or performance expectations are not being met. Managers are expected to\ndocument any concerns and provide a 30-day improvement window before revoking a remote\narrangement, except in cases involving a security policy violation.\n7. Frequently Asked Questions\n- Can I work from another country temporarily? Yes, for up to 20 business days per year with\nmanager approval and an IT Security review of the destination country's data regulations.\n- Does the home office stipend cover internet bills? No, ongoing utilities such as internet or\nelectricity are not covered by the one-time equipment stipend.\n- Who do I contact about VPN issues? IT Helpdesk, available during core hours via the internal\nsupport portal.\nAcme Consulting - Remote Work",
+            "document_id": "09f3b27eec09484e-c29bc21432fa36732f995c30-4",
+            "document_name": "remote-work-policy.pdf"
+          },
+          {
+            "id": "09f3b27eec09484e-c29bc21432fa36732f995c30-0",
+            "score": 0.6618502,
+            "chunk_number": 0,
+            "ingestion_id": "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+            "content": "Acme Consulting - Remote Work Policy\nEffective Date: January 1, 2026 / Owner: People Operations I Version 3.2\n1. Purpose\nThis policy establishes guidelines for employees working remotely, either full-time or on a hybrid\nschedule, to ensure consistent expectations around availability, communication, data security, and\nequipment across every team at Acme Consulting. It applies to all full-time and part-time employees,\nand does not apply to independent contractors, whose remote work terms are governed separately\nby their statement of work.\n2. Eligibility\nEmployees who have completed their 90-day probationary period and whose role does not require\nregular physical presence on client premises are eligible to apply for a remote work arrangement.\nClient-facing consultants staffed on engagements that require on-site work retain a hybrid schedule\ndetermined by the engagement lead, and eligibility for those roles is reassessed at the start of each\nnew engagement.\nNew",
+            "document_id": "09f3b27eec09484e-c29bc21432fa36732f995c30-0",
+            "document_name": "remote-work-policy.pdf"
+          },
+          {
+            "id": "09f3b27eec09484e-c29bc21432fa36732f995c30-1",
+            "score": 0.6447216,
+            "chunk_number": 1,
+            "ingestion_id": "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+            "content": "on-site work retain a hybrid schedule\ndetermined by the engagement lead, and eligibility for those roles is reassessed at the start of each\nnew engagement.\nNew hires joining in a fully remote capacity are exempt from the 90-day waiting period, provided the\nremote arrangement was agreed upon during the offer stage and is documented in the offer letter.\n3. Core Hours and Availability\nAll remote employees must be available and responsive between 10:00 AM and 3:00 PM in their\nlocal time zone, regardless of which time zone they are working from. Outside of core hours,\nemployees may structure their schedule flexibly, provided total weekly hours meet their role's\nexpectations and any standing client meetings are attended.\nEmployees traveling across time zones for more than three consecutive business days should notify\ntheir manager in advance so that core-hour expectations can be temporarily adjusted.\n4. Equipment and Security\nThe company will provide a laptop",
+            "document_id": "09f3b27eec09484e-c29bc21432fa36732f995c30-1",
+            "document_name": "remote-work-policy.pdf"
+          }
+        ],
+        "chunk_count": 5,
+        "chunk_scores": [
+          0.8146155,
+          0.7589787,
+          0.6824968,
+          0.6618502,
+          0.6447216
+        ],
+        "grounded": true,
+        "grounding_check_kind": "citation format/range only; manual factual review is separate"
+      }
+    }
+  },
+  "cost_breakdown": {
+    "router_cost": 0.0,
+    "sql_agent_cost": 0.007524,
+    "retrieval_agent_cost": 0.006633,
+    "synthesis_cost": 0.0,
+    "unclassified_cost": 0.0,
+    "currency": "USD",
+    "total_cost": 0.014157,
+    "known_priced_subtotal_usd": 0.014157,
+    "complete": true,
+    "cost_per_1000_queries": 14.157,
+    "projection_note": "1000 repetitions with identical actual token volumes and the same assumed prices; not a measured future bill.",
+    "actual_reported_llm_calls": 3,
+    "actual_known_input_tokens": 3820,
+    "actual_known_output_tokens": 94,
+    "unpriced_groups": [],
+    "usage_completeness_from_orchestrator": true,
+    "records": [
+      {
+        "record_number": 1,
+        "component": "sql_generation",
+        "group": "sql_agent",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 1986,
+        "output_tokens": 22,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0069168,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      },
+      {
+        "record_number": 2,
+        "component": "sql_interpretation",
+        "group": "sql_agent",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 99,
+        "output_tokens": 17,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0006072,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      },
+      {
+        "record_number": 3,
+        "component": "retrieval_generation",
+        "group": "retrieval_agent",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 1735,
+        "output_tokens": 55,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.006633,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      }
+    ],
+    "pricing_verified_date": "2026-10-15",
+    "billing_assumptions": "Standard on-demand, uncached text inference, no private discounts, credits, tax, batch/Flex/Priority pricing or other AWS service charges. Missing raw cache/tier telemetry is disclosed; these calculated token charges are not an AWS invoice. Nonzero cache counters or a nonstandard service tier are left unpriced.",
+    "pricing_sources": [
+      "https://aws.amazon.com/bedrock/pricing/",
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
+    ],
+    "most_expensive_group": "sql_agent"
+  }
+}

@@ -1,0 +1,19 @@
+# Local secrets and generated deployment assets
+.private/
+.env
+.env.*
+!.env.example
+credentials
+database-credentials.json
+confirmation-key
+.venv/
+__pycache__/
+*.pyc
+dist/
+backups/
+outputs/
+capstone-state.json
+*.zip
+model.onnx
+tokenizer.json
+.DS_Store

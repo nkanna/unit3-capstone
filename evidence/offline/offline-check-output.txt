@@ -1,0 +1,49 @@
+test_altered_sql_and_token_rejected (__main__.GoldChecks.test_altered_sql_and_token_rejected) ... ok
+test_both_workers_reach_synthesis_and_each_model_call_is_priced (__main__.GoldChecks.test_both_workers_reach_synthesis_and_each_model_call_is_priced) ... ok
+test_citation_membership_is_checked_without_claiming_entailment (__main__.GoldChecks.test_citation_membership_is_checked_without_claiming_entailment) ... ok
+test_classification_receives_history_and_resolves_entity (__main__.GoldChecks.test_classification_receives_history_and_resolves_entity) ... ok
+test_confirmation_executes_exact_query_without_regenerating (__main__.GoldChecks.test_confirmation_executes_exact_query_without_regenerating) ... ok
+test_exact_confirmation_survives_module_reload (__main__.GoldChecks.test_exact_confirmation_survives_module_reload) ... ok
+test_expired_receipt_and_different_database_rejected (__main__.GoldChecks.test_expired_receipt_and_different_database_rejected) ... ok
+test_failed_worker_produces_partial_answer_from_other_source (__main__.GoldChecks.test_failed_worker_produces_partial_answer_from_other_source) ... ok
+test_history_cannot_be_swapped_during_confirmation (__main__.GoldChecks.test_history_cannot_be_swapped_during_confirmation) ... ok
+test_incomplete_sql_never_executes_and_usage_is_retained (__main__.GoldChecks.test_incomplete_sql_never_executes_and_usage_is_retained) ... ok
+test_invalid_handler_requests_never_call_graph (__main__.GoldChecks.test_invalid_handler_requests_never_call_graph) ... ok
+test_memory_caps_and_validates_structure (__main__.GoldChecks.test_memory_caps_and_validates_structure) ... ok
+test_memory_review_and_confirmation_coexist_through_handler (__main__.GoldChecks.test_memory_review_and_confirmation_coexist_through_handler) ... ok
+test_missing_usage_or_cache_pricing_does_not_fabricate_cost (__main__.GoldChecks.test_missing_usage_or_cache_pricing_does_not_fabricate_cost) ... ok
+test_no_stale_worker_results_are_replayed (__main__.GoldChecks.test_no_stale_worker_results_are_replayed) ... ok
+test_pending_sql_defers_retrieval_in_both_source_request (__main__.GoldChecks.test_pending_sql_defers_retrieval_in_both_source_request) ... ok
+test_readonly_transaction_rolls_back_closes_and_bounds_rows (__main__.GoldChecks.test_readonly_transaction_rolls_back_closes_and_bounds_rows) ... ok
+test_rejected_queries_never_connect_through_either_executor (__main__.GoldChecks.test_rejected_queries_never_connect_through_either_executor) ... ok
+test_review_criteria_allow_normal_counts_and_lookup (__main__.GoldChecks.test_review_criteria_allow_normal_counts_and_lookup) ... ok
+test_routing_failure_does_not_call_workers (__main__.GoldChecks.test_routing_failure_does_not_call_workers) ... ok
+test_signed_unsafe_sql_still_fails_validator_before_execution (__main__.GoldChecks.test_signed_unsafe_sql_still_fails_validator_before_execution) ... ok
+test_single_source_routes_do_not_call_the_other_worker (__main__.GoldChecks.test_single_source_routes_do_not_call_the_other_worker) ... ok
+test_sql_generation_receives_bounded_history (__main__.GoldChecks.test_sql_generation_receives_bounded_history) ... ok
+test_unanswerable_declines_without_calling_sources (__main__.GoldChecks.test_unanswerable_declines_without_calling_sources) ... ok
+test_unknown_registry_tool_has_exact_contract (__main__.GoldChecks.test_unknown_registry_tool_has_exact_contract) ... ok
+test_unsafe_natural_language_is_blocked_in_full_graph (__main__.GoldChecks.test_unsafe_natural_language_is_blocked_in_full_graph) ... ok
+test_unusual_generated_sql_pauses_without_execution (__main__.GoldChecks.test_unusual_generated_sql_pauses_without_execution) ... ok
+test_validator_required_cases_and_boundaries (__main__.GoldChecks.test_validator_required_cases_and_boundaries) ... ok
+test_bad_build_stops_before_any_aws_client (test_delivery_tools.DeliveryChecks.test_bad_build_stops_before_any_aws_client) ... ok
+test_build_preserves_native_assets_removes_stale_bytecode_and_checks_size (test_delivery_tools.DeliveryChecks.test_build_preserves_native_assets_removes_stale_bytecode_and_checks_size) ... ok
+test_cloud_updates_preserve_environment_and_wait_between_updates (test_delivery_tools.DeliveryChecks.test_cloud_updates_preserve_environment_and_wait_between_updates) ... ok
+test_confirmation_requires_a_real_human_yes (test_delivery_tools.DeliveryChecks.test_confirmation_requires_a_real_human_yes) ... ok
+test_evidence_has_required_eight_plus_two_mix (test_delivery_tools.DeliveryChecks.test_evidence_has_required_eight_plus_two_mix) ... ok
+test_lambda_evidence_uses_cli_once_with_retries_disabled (test_delivery_tools.DeliveryChecks.test_lambda_evidence_uses_cli_once_with_retries_disabled) ... ok
+test_preparation_copies_only_application_files_and_generates_private_key (test_delivery_tools.DeliveryChecks.test_preparation_copies_only_application_files_and_generates_private_key) ... ok
+test_preparation_preserves_user_modified_source (test_delivery_tools.DeliveryChecks.test_preparation_preserves_user_modified_source) ... ok
+test_submission_excludes_private_key_and_native_package (test_delivery_tools.DeliveryChecks.test_submission_excludes_private_key_and_native_package) ... ok
+test_unknown_owned_name_cannot_adopt_different_function (test_delivery_tools.DeliveryChecks.test_unknown_owned_name_cannot_adopt_different_function) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.658s
+
+OK
+PASS | 'SELECT COUNT(*) FROM clients;' | OK
+PASS | 'DROP TABLE clients;' | Blocked: only SELECT queries are permitted; query must begin with SELECT.
+PASS | 'SELECT deleted_at FROM projects;' | OK
+PASS | 'SELECT * FROM clients; DROP TABLE clients;' | Blocked: multiple statements or extra statement delimiters detected.
+PASS | 'SELECT * FROM clients; SELECT * FROM projects;' | Blocked: multiple statements or extra statement delimiters detected.
+PASS | 'dElEtE\n\tFROM projects;' | Blocked: only SELECT queries are permitted; query must begin with SELECT.

@@ -1,0 +1,7 @@
+{
+  "confirmation": {
+    "sql": "DROP TABLE clients;",
+    "token": "[REDACTED confirmation receipt; SHA256 33269eaf0d410f1b669c2a72985023370d6e31f847b27bec65dffc3c070a80db]"
+  },
+  "history": []
+}

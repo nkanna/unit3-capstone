@@ -1,0 +1,117 @@
+{
+  "prepared_at_utc": "2026-10-15T16:56:30.426506+00:00",
+  "phase": "source-only; not built or deployed",
+  "instructor_commit": "d0d41427a913a552934a91313a736b8fffd6163e",
+  "target_runtime": "python3.12",
+  "target_architecture": "x86_64",
+  "actual_local_dependency_versions": {
+    "langgraph": "1.2.15",
+    "langchain-core": "1.6.10",
+    "langsmith": "0.14.9",
+    "pydantic": "2.14.1",
+    "sqlglot": "30.22.0",
+    "boto3": "1.43.113",
+    "opensearch-py": "3.2.0",
+    "numpy": "2.5.4",
+    "sentence-transformers": "5.7.0",
+    "tokenizers": "0.23.3"
+  },
+  "files": [
+    {
+      "name": "MODEL-REVISION.json",
+      "sha256": "47397f1dd5b52eb2556d166d38227a4b9154d4631e043cbbe952ee74d5eb997a"
+    },
+    {
+      "name": "SCHEMA.md",
+      "sha256": "26954286c0e566102fd58c2a5b05d86bf120d0e2fe61c328d19b33ebfb1cf324"
+    },
+    {
+      "name": "agents/__init__.py",
+      "sha256": "c0ba8e42fff28cf054dbe33d69ba73cb3cd9b302ef359c4d4f8a5582ee182b6c"
+    },
+    {
+      "name": "agents/retrieval_agent.py",
+      "sha256": "97e77f379e8f5c0ae19679789c75bf8b7b8b74e54860eae68765234c67036cf8"
+    },
+    {
+      "name": "agents/sql_agent.py",
+      "sha256": "2d9a6ee6810d9bbeb6252b82cc8da967d2bfa3f99b96646ed31f6b94dae84483"
+    },
+    {
+      "name": "backends.py",
+      "sha256": "f931f912d1446bb9952afe417210f16ce7de757dbd34eabc9e6bde11263ea983"
+    },
+    {
+      "name": "bedrock_client.py",
+      "sha256": "ce786249b67292a75be8b8bfe8367bcf03a1aa0c41329ce135b0f6f37a569c24"
+    },
+    {
+      "name": "ingestion-provenance.json",
+      "sha256": "1d691bba38a3606a8e4d54fcae4e881f9418faceba93f68092063820339d9ec6"
+    },
+    {
+      "name": "lambda_handler.py",
+      "sha256": "9420624d5684d9ee90f35b5bdf6c42f6a8a83f8048632578e9e993694ecd91a9"
+    },
+    {
+      "name": "monitored_orchestrator.py",
+      "sha256": "7b5a2b05536bfe6e1747bc816064f333f0a866cf0f53c779ec37f18251db288d"
+    },
+    {
+      "name": "onnx_embed.py",
+      "sha256": "4fd5b127825d1edef5a9d8ddd87062dc7a130815f40884e7b1eb3e4e07b13898"
+    },
+    {
+      "name": "orchestrator.py",
+      "sha256": "134e6b4967c9d1b51990ad9bd5069963b0fdf63ad3c089f8debf93f5d08213d8"
+    },
+    {
+      "name": "pricing.json",
+      "sha256": "6a40803dac50844cef8be83c13c40827463ad8a025b1d7dc541377c455cb67e3"
+    },
+    {
+      "name": "rds-ca.pem",
+      "sha256": "fe45bbebf92ad3e27a583bbb2ddd1553c521ed4d49af5514dc0a40372ea5395c"
+    },
+    {
+      "name": "retrieval_runtime.py",
+      "sha256": "ec4f3edf59fcfd7af4b8644f63f95b218d6e1b1ffa4b04acfff9280098561a06"
+    },
+    {
+      "name": "runtime_cloud.py",
+      "sha256": "ba5c31ad19cbfbf36d562a173605337d92ccfffcf26b661b33303ccf8ae5fd75"
+    },
+    {
+      "name": "runtime_embeddings.py",
+      "sha256": "ea16cbe45aae9aecbf39155a6aeb319c3da983432bc8e7d8a9b1fa8edb07d840"
+    },
+    {
+      "name": "selected-corpus.json",
+      "sha256": "cde370ff2d02c896d0a3ef9958130b96c9a5fe7cdaa73b25561a80e29c96895b"
+    },
+    {
+      "name": "sql_runtime.py",
+      "sha256": "e2c0082287dc66f1c3b4c712c5b5b1b63fa6a0b9cb46388a64a34d6f4526c626"
+    },
+    {
+      "name": "sql_validator.py",
+      "sha256": "e6c7de05d1c821b4740a334862dcac0cd4f724bdef30b3950b1e413275881a26"
+    },
+    {
+      "name": "tokenomics_costs.py",
+      "sha256": "4f3d6454a87d8a2299532f610d066bf4a2c579372129585fe9636b5e8f5d1a3c"
+    },
+    {
+      "name": "tokenomics_logger.py",
+      "sha256": "5fb3f4a7381ce43900203f093ad0687a6ff0b599e93e73a23b7de59654ceae0f"
+    },
+    {
+      "name": "tool_registry.py",
+      "sha256": "c7c2b9a77eff972e4b6f7b3d55902c47ab0f1f1b09c75ebfac470a49cc4bcca9"
+    }
+  ],
+  "model_assets_present": false,
+  "dependencies_present": false,
+  "aws_mutations": 0,
+  "live_calls": 0
+}

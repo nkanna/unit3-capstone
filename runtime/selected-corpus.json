@@ -1,0 +1,26 @@
+{
+  "index": "document-ingestion-lab",
+  "region": "us-east-1",
+  "domain": "vector-search-lesson",
+  "endpoint": "search-vector-search-lesson-3cs5x53c62obpgdmi2s5zlmsna.us-east-1.es.amazonaws.com",
+  "bucket": "bootcamp-day3-593470989370-us-east-1",
+  "dataset_id": "1aa705294596e2c2aa181b180c152060b758b094dea73797c33c74957566a816",
+  "ingestion_ids": [
+    "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+    "b44f766f663005e8f7b2c3299728fc9aeb98f72479bb8c351017659f39d6a16d",
+    "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+    "3fde10807b6ce7a00b983175ea2c8267d2fe880152db4ae949b097aecbf78985"
+  ],
+  "document_count": 4,
+  "chunk_count": 22,
+  "source_by_ingestion_id": {
+    "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+    "b44f766f663005e8f7b2c3299728fc9aeb98f72479bb8c351017659f39d6a16d": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/05d86cecfac414f5-q2-2026-client-report.pdf",
+    "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+    "3fde10807b6ce7a00b983175ea2c8267d2fe880152db4ae949b097aecbf78985": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/fdfcf386e7c56429-retail-supply-chain-case-study.pdf"
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dimension": 384,
+  "ingestion_report": "ingestion-provenance.json",
+  "ingestion_report_sha256": "1d691bba38a3606a8e4d54fcae4e881f9418faceba93f68092063820339d9ec6"
+}

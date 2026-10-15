@@ -1,0 +1,7 @@
+{
+  "automated_checks_passed": true,
+  "actual_focused_queries": 10,
+  "baseline_gold_evidence_preserved": true,
+  "human_citation_review_complete": false,
+  "note": "Baseline ten-query costs remain separately scoped; these focused rechecks have their own actual usage and costs."
+}

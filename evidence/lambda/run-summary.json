@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "mode": "lambda",
+  "actual_queries": 10,
+  "eight_required_cases_passed": true,
+  "ten_query_cost_summary_complete": true,
+  "gold_stretch_checks_passed": true,
+  "cloudwatch_complete": true,
+  "human_citation_review_complete": false,
+  "demo_complete": false
+}

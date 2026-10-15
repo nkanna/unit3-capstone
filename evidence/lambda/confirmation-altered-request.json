@@ -1,0 +1,16 @@
+{
+  "confirmation": {
+    "sql": "SELECT p.*\nFROM projects p\nJOIN clients c ON p.client_id = c.id\nWHERE c.name = 'Acme Corp'; SELECT * FROM invoices;",
+    "token": "[REDACTED confirmation receipt; SHA256 8d8f9d21c309af13b48dc4f2ab2e33cc8ce970dc58513f10b99727ea8f2a0a65]"
+  },
+  "history": [
+    {
+      "question": "How many active projects does Acme Corp have?",
+      "answer": "## Answer\n\nAcme Corp has **1** active project. [SQL]"
+    },
+    {
+      "question": "What about their total contract value?",
+      "answer": "## Total Contract Value for Acme Corp\n\nThe total contract value for Acme Corp is **$250,000.00** [SQL].\n\nThis figure is based on a single contract record found in the database (ID: 1, Name: Acme Corp, Contract Value: $250,000.00) [SQL]. The result set was not truncated, meaning no additional records were omitted [SQL].\n\n> **Note:** No document/retrieval evidence was available for this query; the answer is based solely on the SQL query result (`SELECT c.id, c.name, c.contract_value FROM clients c WHERE c.name = 'Acme Corp';`) [SQL]."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "lookup_sql": "SELECT id, name FROM clients WHERE name = 'Acme Corp';",
+  "lookup_validation": "PASSED",
+  "actual_lookup_rows": [
+    [
+      1,
+      "Acme Corp"
+    ]
+  ],
+  "flagged_sql": "SELECT p.* FROM projects p JOIN clients c ON p.client_id = c.id WHERE c.id = 1;",
+  "scope_check_passed": true,
+  "flagged_query_executed_by_this_check": false,
+  "method": "Mandatory root WHERE predicate, verified client ID/name and project/client join binding."
+}

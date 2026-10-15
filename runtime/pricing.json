@@ -1,0 +1,15 @@
+{
+  "verified_date": "2026-10-15",
+  "currency": "USD",
+  "model_family": "anthropic.claude-sonnet-4-6",
+  "global_input_per_million": "3.00",
+  "global_output_per_million": "15.00",
+  "regional_multiplier": "1.10",
+  "sources": [
+    "https://aws.amazon.com/bedrock/pricing/",
+    "https://platform.claude.com/docs/en/about-claude/pricing",
+    "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
+  ],
+  "basis": "Published Sonnet 4.6 base rates with the documented 10% regional CRIS premium for us./eu./apac./au./jp. profiles. Global profiles use the base rates. AWS pricing page's dynamic model table was not exposed in retrieved text; numerical base and regional modifier were verified in Anthropic's official Bedrock/pricing documentation.",
+  "billing_assumptions": "Standard on-demand, uncached text inference, no private discounts, credits, tax, batch/Flex/Priority pricing or other AWS service charges. Missing raw cache/tier telemetry is disclosed; these calculated token charges are not an AWS invoice. Nonzero cache counters or a nonstandard service tier are left unpriced."
+}

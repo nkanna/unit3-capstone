@@ -1,0 +1,9 @@
+{
+  "question": "What about their total contract value?",
+  "history": [
+    {
+      "question": "How many active projects does Acme Corp have?",
+      "answer": "## Answer\n\n**Acme Corp has 1 active project.** [SQL]\n\nThis reflects a complete, untruncated count of all projects associated with Acme Corp where the project status is 'active'. [SQL]\n\nNo retrieval/document evidence was supplied for this question; the answer is based solely on the SQL query result."
+    }
+  ]
+}

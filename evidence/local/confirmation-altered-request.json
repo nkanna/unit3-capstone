@@ -1,0 +1,16 @@
+{
+  "confirmation": {
+    "sql": "SELECT p.* FROM projects p JOIN clients c ON p.client_id = c.id WHERE c.id = 1; SELECT * FROM invoices;",
+    "token": "[REDACTED confirmation receipt; SHA256 e1ca80f3cf3354e30c40675d269fc42177e9254466b5d928b7fbd358c4f34ae3]"
+  },
+  "history": [
+    {
+      "question": "How many active projects does Acme Corp have?",
+      "answer": "## Answer\n\n**Acme Corp has 1 active project.** [SQL]\n\nThis reflects a complete, untruncated count of all projects associated with Acme Corp where the project status is 'active'. [SQL]\n\nNo retrieval/document evidence was supplied for this question; the answer is based solely on the SQL query result."
+    },
+    {
+      "question": "What about their total contract value?",
+      "answer": "## Acme Corp's Total Contract Value\n\nBased on the available evidence, **Acme Corp's total contract value is $250,000.00** [SQL].\n\nThis figure comes from a single contract record associated with Acme Corp (Client ID: 1) in the database, and the result set is confirmed as complete (not truncated) [SQL].\n\n> **Note:** No documentary evidence was provided by a retrieval agent for this query. The answer above is based solely on the SQL query result. If additional contracts exist outside the queried database, that information is unavailable from the supplied evidence."
+    }
+  ]
+}

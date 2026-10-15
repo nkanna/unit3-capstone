@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "runtime": "python3.12",
+  "architecture": "x86_64",
+  "zip_path": "/Users/niran/bootcamp/unit3-capstone-gold/dist/lambda-gold.zip",
+  "zip_sha256": "46058863f3ac2e7bbc5b906352df55c3fd206a192758f195e103e9ac1f8b4df6",
+  "zip_bytes": 129041215,
+  "uncompressed_bytes": 237303074,
+  "base_sha256": "53a852652bdf8176598d7ace838ec25a412b520aec15f2a074c65df1c48f0b0c",
+  "source_manifest_sha256": "9e9503a8cbe0a851e075200f40b65c7d203bde7790200be5cb8a47ef7fbad3f1",
+  "offline_checks": 38,
+  "model_and_native_dependencies_unchanged": true,
+  "original_real_onnx_equivalence_checks": 6,
+  "new_aws_calls": 0
+}

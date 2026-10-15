@@ -1,0 +1,281 @@
+{
+  "timestamp_utc": "20261015T160447837365Z",
+  "success": true,
+  "documents": [
+    {
+      "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+      "source_id": "aeec03a7657074ac43169628842544d8fcd9166eec87c6c16027b5671476907e",
+      "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+      "expected_chunk_count": 5,
+      "verified_chunk_count": 5,
+      "max_encoded_tokens": 182,
+      "job_id": "5b02faf501725ae082a4b7be2d8eff8d86089a768628d0a044e77dae67263fd8",
+      "job_status": "SUCCEEDED",
+      "document_page_count": 2,
+      "line_count": 51,
+      "extraction": {
+        "job_id": "5b02faf501725ae082a4b7be2d8eff8d86089a768628d0a044e77dae67263fd8",
+        "job_status": "SUCCEEDED",
+        "document_page_count": 2,
+        "line_count": 51,
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "Cloud Data Migration Playbook\nPractice: Technology Advisory\n/\nAudience: Engagement Leads\n/\nVersion 1.4\nOverview\nThis playbook outlines Acme Consulting's standard approach to migrating a client's on-premises\ndata infrastructure to a cloud platform. It is intended as a reference for engagement leads scoping a\nmigration workstream, not as a substitute for a client-specific migration plan, which should always be\nproduced during discovery.\nPhase 1: Discovery and Assessment\nEvery migration engagement begins with a two-to-four week discovery phase that inventories the\nclient's existing systems, data volumes, and integration points. A common mistake in early-stage\nestimates is underweighting integration complexity relative to raw data volume; a small database\nwith twenty downstream integrations is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and a preliminary risk register. Engagements that skip a formal risk\nregister during discovery are disproportionately likely to encounter unplanned schedule slippage\nduring the cutover phase.\nPhase 2: Migration Strategy Selection\nThree strategies are commonly used, and the right choice depends on the client's tolerance for\ndowntime and the complexity of the source system. A lift-and-shift approach moves data with\nminimal transformation and is fastest, but carries forward any existing schema problems. A\nre-platform approach modernizes the schema during migration and is the most common choice for\nclients with known data quality issues. A parallel-run strategy operates both systems simultaneously\nfor a transition period and is recommended when downtime tolerance is near zero, such as for\ntransaction-processing systems.\nPhase 3: Execution\nMigrations should always be executed in batches rather than as a single cutover, even for smaller\ndatasets, since batching allows validation checkpoints between stages and limits the blast radius of\nany single failure. Each batch should be validated against source-system checksums before the next\nbatch begins, and a rollback plan should exist for every batch, not only for the final cutover.\nClient communication during execution matters as much as the technical work. We recommend a\ndaily status update during active migration windows, even on days with no notable progress, since\nsilence during a migration is one of the most common sources of client anxiety on these\nengagements.\nPhase 4: Validation and Cutover\nBefore final cutover, run a full reconciliation between source and target systems covering record\ncounts, checksums on a sampled basis, and functional testing of downstream reports or applications\nthat depend on the migrated data. Known data quality issues identified during discovery should be\nremediated before cutover wherever feasible, rather than migrated as-is, since fixing them\nCloud Data Migration Playbook - Page 1"
+          },
+          {
+            "page_number": 2,
+            "text": "post-migration is typically more expensive once the data is in active use.\nCommon Pitfalls\n- Underestimating integration complexity relative to data volume during initial scoping.\n- Treating discovery as optional or compressing it to save time, which increases risk later.\n- Migrating known-bad data as-is instead of scheduling a cleansing sprint before cutover.\n- Insufficient client communication during execution, leading to avoidable stakeholder anxiety.\n- Skipping a rollback plan for intermediate batches, not just the final cutover.\nCloud Data Migration Playbook - Page 2"
+          }
+        ],
+        "raw_text": "Cloud Data Migration Playbook\nPractice: Technology Advisory\n/\nAudience: Engagement Leads\n/\nVersion 1.4\nOverview\nThis playbook outlines Acme Consulting's standard approach to migrating a client's on-premises\ndata infrastructure to a cloud platform. It is intended as a reference for engagement leads scoping a\nmigration workstream, not as a substitute for a client-specific migration plan, which should always be\nproduced during discovery.\nPhase 1: Discovery and Assessment\nEvery migration engagement begins with a two-to-four week discovery phase that inventories the\nclient's existing systems, data volumes, and integration points. A common mistake in early-stage\nestimates is underweighting integration complexity relative to raw data volume; a small database\nwith twenty downstream integrations is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and a preliminary risk register. Engagements that skip a formal risk\nregister during discovery are disproportionately likely to encounter unplanned schedule slippage\nduring the cutover phase.\nPhase 2: Migration Strategy Selection\nThree strategies are commonly used, and the right choice depends on the client's tolerance for\ndowntime and the complexity of the source system. A lift-and-shift approach moves data with\nminimal transformation and is fastest, but carries forward any existing schema problems. A\nre-platform approach modernizes the schema during migration and is the most common choice for\nclients with known data quality issues. A parallel-run strategy operates both systems simultaneously\nfor a transition period and is recommended when downtime tolerance is near zero, such as for\ntransaction-processing systems.\nPhase 3: Execution\nMigrations should always be executed in batches rather than as a single cutover, even for smaller\ndatasets, since batching allows validation checkpoints between stages and limits the blast radius of\nany single failure. Each batch should be validated against source-system checksums before the next\nbatch begins, and a rollback plan should exist for every batch, not only for the final cutover.\nClient communication during execution matters as much as the technical work. We recommend a\ndaily status update during active migration windows, even on days with no notable progress, since\nsilence during a migration is one of the most common sources of client anxiety on these\nengagements.\nPhase 4: Validation and Cutover\nBefore final cutover, run a full reconciliation between source and target systems covering record\ncounts, checksums on a sampled basis, and functional testing of downstream reports or applications\nthat depend on the migrated data. Known data quality issues identified during discovery should be\nremediated before cutover wherever feasible, rather than migrated as-is, since fixing them\nCloud Data Migration Playbook - Page 1\n\npost-migration is typically more expensive once the data is in active use.\nCommon Pitfalls\n- Underestimating integration complexity relative to data volume during initial scoping.\n- Treating discovery as optional or compressing it to save time, which increases risk later.\n- Migrating known-bad data as-is instead of scheduling a cleansing sprint before cutover.\n- Insufficient client communication during execution, leading to avoidable stakeholder anxiety.\n- Skipping a rollback plan for intermediate batches, not just the final cutover.\nCloud Data Migration Playbook - Page 2"
+      },
+      "chunks": [
+        {
+          "content": "Cloud Data Migration Playbook\nPractice: Technology Advisory\n/\nAudience: Engagement Leads\n/\nVersion 1.4\nOverview\nThis playbook outlines Acme Consulting's standard approach to migrating a client's on-premises\ndata infrastructure to a cloud platform. It is intended as a reference for engagement leads scoping a\nmigration workstream, not as a substitute for a client-specific migration plan, which should always be\nproduced during discovery.\nPhase 1: Discovery and Assessment\nEvery migration engagement begins with a two-to-four week discovery phase that inventories the\nclient's existing systems, data volumes, and integration points. A common mistake in early-stage\nestimates is underweighting integration complexity relative to raw data volume; a small database\nwith twenty downstream integrations is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and a preliminary risk register. Engagements that skip a formal risk\nregister during discovery are disproportionately likely to encounter unplanned schedule slippage\nduring the cutover phase.\nPhase 2: Migration Strategy Selection\nThree strategies are commonly used, and the right choice depends on the client's tolerance for\ndowntime and the complexity of the source system. A lift-and-shift approach moves data with\nminimal transformation and is fastest, but carries forward any existing schema problems. A\nre-platform approach modernizes the schema during migration and is the most common choice for\nclients with known data quality issues. A parallel-run strategy operates both systems simultaneously\nfor a transition period and is recommended when downtime tolerance is near zero, such as",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "with known data quality issues. A parallel-run strategy operates both systems simultaneously\nfor a transition period and is recommended when downtime tolerance is near zero, such as for\ntransaction-processing systems.\nPhase 3: Execution\nMigrations should always be executed in batches rather than as a single cutover, even for smaller\ndatasets, since batching allows validation checkpoints between stages and limits the blast radius of\nany single failure. Each batch should be validated against source-system checksums before the next\nbatch begins, and a rollback plan should exist for every batch, not only for the final cutover.\nClient communication during execution matters as much as the technical work. We recommend a\ndaily status update during active migration windows, even on days with no notable progress, since\nsilence during a migration is one of the most common sources of client anxiety on these\nengagements.\nPhase 4: Validation and Cutover\nBefore",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "with no notable progress, since\nsilence during a migration is one of the most common sources of client anxiety on these\nengagements.\nPhase 4: Validation and Cutover\nBefore final cutover, run a full reconciliation between source and target systems covering record\ncounts, checksums on a sampled basis, and functional testing of downstream reports or applications\nthat depend on the migrated data. Known data quality issues identified during discovery should be\nremediated before cutover wherever feasible, rather than migrated as-is, since fixing them\nCloud Data Migration Playbook - Page 1",
+          "token_count": 109,
+          "page_number": 1
+        },
+        {
+          "content": "post-migration is typically more expensive once the data is in active use.\nCommon Pitfalls\n- Underestimating integration complexity relative to data volume during initial scoping.\n- Treating discovery as optional or compressing it to save time, which increases risk later.\n- Migrating known-bad data as-is instead of scheduling a cleansing sprint before cutover.\n- Insufficient client communication during execution, leading to avoidable stakeholder anxiety.\n- Skipping a rollback plan for intermediate batches, not just the final cutover.\nCloud Data Migration Playbook - Page 2",
+          "token_count": 113,
+          "page_number": 2
+        }
+      ],
+      "name": "cloud-migration-playbook.pdf",
+      "sha256": "e9dc3cd1bac9eee66edd4559103971da288308d6af9abd26d6fc6df268d39bc6",
+      "uploaded": true
+    },
+    {
+      "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/05d86cecfac414f5-q2-2026-client-report.pdf",
+      "source_id": "0ceb1ed301894dcb3012588036c633a6f806d45c5a48c904e72a62edb6951fdd",
+      "ingestion_id": "b44f766f663005e8f7b2c3299728fc9aeb98f72479bb8c351017659f39d6a16d",
+      "expected_chunk_count": 6,
+      "verified_chunk_count": 6,
+      "max_encoded_tokens": 182,
+      "job_id": "b71b0c1b9ccfbf5af2541577c9525d7ec1d03aeee4c85be029bc76f2c50b1600",
+      "job_status": "SUCCEEDED",
+      "document_page_count": 2,
+      "line_count": 57,
+      "extraction": {
+        "job_id": "b71b0c1b9ccfbf5af2541577c9525d7ec1d03aeee4c85be029bc76f2c50b1600",
+        "job_status": "SUCCEEDED",
+        "document_page_count": 2,
+        "line_count": 57,
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "Quarterly Engagement Report . Q2 2026\nPrepared for: Client Executive Sponsor\n/\nPrepared by: Engagement Lead\n/\nJuly 2026\nExecutive Summary\nThis quarter's engagement focused on completing the data migration workstream and beginning\ndiscovery for the reporting dashboard workstream. Overall the engagement remains on schedule\nand within the originally approved budget, with total spend at 48% of the annual contract value\nagainst a planned 52% at this point in the calendar.\nKey Milestones Completed\n- Legacy database schema fully mapped to the new platform, covering all 14 core tables identified\nin the Q1 discovery phase.\n- 92% of historical records migrated and validated against source-system checksums.\n- Stakeholder interviews completed for the dashboard workstream, covering finance, operations,\nand regional sales leadership.\n- Security review of the new platform's access control model completed with no critical findings.\nRisks and Mitigations\nThe remaining 8% of historical records contain data quality issues inherited from a prior system\nmigration in 2019, primarily duplicate customer records and inconsistent date formatting in the\ntransaction history tables. Migrating these records as-is would propagate known errors into the new\nplatform's reporting layer.\nWe recommend a two-week data cleansing sprint before final cutover rather than migrating these\nknown-bad records as-is. This would push the final cutover date back by approximately ten business\ndays but avoids a more costly remediation effort after go-live, when the affected records would\nalready be in active use across multiple downstream reports.\nA secondary, lower-severity risk is dashboard workstream scope: two of the five stakeholder groups\ninterviewed requested reporting capabilities beyond the originally scoped set of dashboards. We\nrecommend treating these as a Phase 2 addition rather than expanding the current workstream, to\navoid schedule slippage on the core deliverables.\nBudget Status\nYear-to-date spend is tracking under the planned burn rate, primarily due to the data migration\nworkstream completing ahead of the original estimate. We recommend reallocating the resulting\nbudget headroom toward the recommended data cleansing sprint rather than returning it, since the\ncleansing work directly reduces downstream risk on the reporting workstream.\nNext Quarter Priorities\n- Complete data cleansing sprint and final cutover to the new platform.\n- Deliver first draft of the reporting dashboard wireframes for stakeholder review.\n- Begin user acceptance testing with the finance team, targeting a two-week testing window.\n- Revisit Phase 2 scope discussion with stakeholders once core dashboards are stable.\nQuarterly Engagement Report - Q2 2026 - Page 1"
+          },
+          {
+            "page_number": 2,
+            "text": "Team and Staffing\nThe engagement team remains staffed at three consultants and one engagement lead through the\nend of Q3, which matches the original staffing plan. We do not anticipate needing to add headcount\nfor the data cleansing sprint, since the work is well-scoped and can be absorbed by the current team\nwithout extending the timeline further.\nOne staffing change to note: our data engineer on this account will be rotating off at the start of Q3\nto support a new engagement, and will be replaced by a consultant of equivalent seniority who has\nalready begun shadowing the current cutover planning to ensure a smooth handoff.\nClient Feedback\nInformal feedback gathered during this quarter's stakeholder interviews was positive overall, with\nseveral finance team members specifically noting that the migration workstream's validation process\ngave them confidence in the new platform's data accuracy. The primary piece of constructive\nfeedback was a request for more advance notice ahead of scheduled maintenance windows, which\nwe have incorporated into the communication plan for the upcoming cutover.\nQuarterly Engagement Report - Q2 2026 - Page 2"
+          }
+        ],
+        "raw_text": "Quarterly Engagement Report . Q2 2026\nPrepared for: Client Executive Sponsor\n/\nPrepared by: Engagement Lead\n/\nJuly 2026\nExecutive Summary\nThis quarter's engagement focused on completing the data migration workstream and beginning\ndiscovery for the reporting dashboard workstream. Overall the engagement remains on schedule\nand within the originally approved budget, with total spend at 48% of the annual contract value\nagainst a planned 52% at this point in the calendar.\nKey Milestones Completed\n- Legacy database schema fully mapped to the new platform, covering all 14 core tables identified\nin the Q1 discovery phase.\n- 92% of historical records migrated and validated against source-system checksums.\n- Stakeholder interviews completed for the dashboard workstream, covering finance, operations,\nand regional sales leadership.\n- Security review of the new platform's access control model completed with no critical findings.\nRisks and Mitigations\nThe remaining 8% of historical records contain data quality issues inherited from a prior system\nmigration in 2019, primarily duplicate customer records and inconsistent date formatting in the\ntransaction history tables. Migrating these records as-is would propagate known errors into the new\nplatform's reporting layer.\nWe recommend a two-week data cleansing sprint before final cutover rather than migrating these\nknown-bad records as-is. This would push the final cutover date back by approximately ten business\ndays but avoids a more costly remediation effort after go-live, when the affected records would\nalready be in active use across multiple downstream reports.\nA secondary, lower-severity risk is dashboard workstream scope: two of the five stakeholder groups\ninterviewed requested reporting capabilities beyond the originally scoped set of dashboards. We\nrecommend treating these as a Phase 2 addition rather than expanding the current workstream, to\navoid schedule slippage on the core deliverables.\nBudget Status\nYear-to-date spend is tracking under the planned burn rate, primarily due to the data migration\nworkstream completing ahead of the original estimate. We recommend reallocating the resulting\nbudget headroom toward the recommended data cleansing sprint rather than returning it, since the\ncleansing work directly reduces downstream risk on the reporting workstream.\nNext Quarter Priorities\n- Complete data cleansing sprint and final cutover to the new platform.\n- Deliver first draft of the reporting dashboard wireframes for stakeholder review.\n- Begin user acceptance testing with the finance team, targeting a two-week testing window.\n- Revisit Phase 2 scope discussion with stakeholders once core dashboards are stable.\nQuarterly Engagement Report - Q2 2026 - Page 1\n\nTeam and Staffing\nThe engagement team remains staffed at three consultants and one engagement lead through the\nend of Q3, which matches the original staffing plan. We do not anticipate needing to add headcount\nfor the data cleansing sprint, since the work is well-scoped and can be absorbed by the current team\nwithout extending the timeline further.\nOne staffing change to note: our data engineer on this account will be rotating off at the start of Q3\nto support a new engagement, and will be replaced by a consultant of equivalent seniority who has\nalready begun shadowing the current cutover planning to ensure a smooth handoff.\nClient Feedback\nInformal feedback gathered during this quarter's stakeholder interviews was positive overall, with\nseveral finance team members specifically noting that the migration workstream's validation process\ngave them confidence in the new platform's data accuracy. The primary piece of constructive\nfeedback was a request for more advance notice ahead of scheduled maintenance windows, which\nwe have incorporated into the communication plan for the upcoming cutover.\nQuarterly Engagement Report - Q2 2026 - Page 2"
+      },
+      "chunks": [
+        {
+          "content": "Quarterly Engagement Report . Q2 2026\nPrepared for: Client Executive Sponsor\n/\nPrepared by: Engagement Lead\n/\nJuly 2026\nExecutive Summary\nThis quarter's engagement focused on completing the data migration workstream and beginning\ndiscovery for the reporting dashboard workstream. Overall the engagement remains on schedule\nand within the originally approved budget, with total spend at 48% of the annual contract value\nagainst a planned 52% at this point in the calendar.\nKey Milestones Completed\n- Legacy database schema fully mapped to the new platform, covering all 14 core tables identified\nin the Q1 discovery phase.\n- 92% of historical records migrated and validated against source-system checksums.\n- Stakeholder interviews completed for the dashboard workstream, covering finance, operations,\nand regional sales leadership.\n- Security review of the new platform's access control model completed with no critical findings.\nRisks and Mitigations\nThe remaining 8% of",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "regional sales leadership.\n- Security review of the new platform's access control model completed with no critical findings.\nRisks and Mitigations\nThe remaining 8% of historical records contain data quality issues inherited from a prior system\nmigration in 2019, primarily duplicate customer records and inconsistent date formatting in the\ntransaction history tables. Migrating these records as-is would propagate known errors into the new\nplatform's reporting layer.\nWe recommend a two-week data cleansing sprint before final cutover rather than migrating these\nknown-bad records as-is. This would push the final cutover date back by approximately ten business\ndays but avoids a more costly remediation effort after go-live, when the affected records would\nalready be in active use across multiple downstream reports.\nA secondary, lower-severity risk is dashboard workstream scope: two of the five stakeholder groups\ninterviewed requested reporting capabilities beyond the originally scoped",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "downstream reports.\nA secondary, lower-severity risk is dashboard workstream scope: two of the five stakeholder groups\ninterviewed requested reporting capabilities beyond the originally scoped set of dashboards. We\nrecommend treating these as a Phase 2 addition rather than expanding the current workstream, to\navoid schedule slippage on the core deliverables.\nBudget Status\nYear-to-date spend is tracking under the planned burn rate, primarily due to the data migration\nworkstream completing ahead of the original estimate. We recommend reallocating the resulting\nbudget headroom toward the recommended data cleansing sprint rather than returning it, since the\ncleansing work directly reduces downstream risk on the reporting workstream.\nNext Quarter Priorities\n- Complete data cleansing sprint and final cutover to the new platform.\n- Deliver first draft of the reporting dashboard wireframes for stakeholder review.\n- Begin user acceptance testing with the finance team, targeting a two-week",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": ".\n- Deliver first draft of the reporting dashboard wireframes for stakeholder review.\n- Begin user acceptance testing with the finance team, targeting a two-week testing window.\n- Revisit Phase 2 scope discussion with stakeholders once core dashboards are stable.\nQuarterly Engagement Report - Q2 2026 - Page 1",
+          "token_count": 65,
+          "page_number": 1
+        },
+        {
+          "content": "Team and Staffing\nThe engagement team remains staffed at three consultants and one engagement lead through the\nend of Q3, which matches the original staffing plan. We do not anticipate needing to add headcount\nfor the data cleansing sprint, since the work is well-scoped and can be absorbed by the current team\nwithout extending the timeline further.\nOne staffing change to note: our data engineer on this account will be rotating off at the start of Q3\nto support a new engagement, and will be replaced by a consultant of equivalent seniority who has\nalready begun shadowing the current cutover planning to ensure a smooth handoff.\nClient Feedback\nInformal feedback gathered during this quarter's stakeholder interviews was positive overall, with\nseveral finance team members specifically noting that the migration workstream's validation process\ngave them confidence in the new platform's data accuracy. The primary piece of constructive\nfeedback",
+          "token_count": 182,
+          "page_number": 2
+        },
+        {
+          "content": "finance team members specifically noting that the migration workstream's validation process\ngave them confidence in the new platform's data accuracy. The primary piece of constructive\nfeedback was a request for more advance notice ahead of scheduled maintenance windows, which\nwe have incorporated into the communication plan for the upcoming cutover.\nQuarterly Engagement Report - Q2 2026 - Page 2",
+          "token_count": 72,
+          "page_number": 2
+        }
+      ],
+      "name": "q2-2026-client-report.pdf",
+      "sha256": "05d86cecfac414f53539a4a7a0bfa82b9e3c5267176cf61c37d0fc2c9e4c5898",
+      "uploaded": true
+    },
+    {
+      "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/0e9e0c035e0a17c2-remote-work-policy.pdf",
+      "source_id": "09f3b27eec09484e36fc7030072d209dcfa024a84fd79b59ee4c9afcd1078836",
+      "ingestion_id": "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+      "expected_chunk_count": 6,
+      "verified_chunk_count": 6,
+      "max_encoded_tokens": 182,
+      "job_id": "a19b6465ea3be03f36037dd8d36215adca0013ad526d6998f8583d6c0e148e7d",
+      "job_status": "SUCCEEDED",
+      "document_page_count": 2,
+      "line_count": 51,
+      "extraction": {
+        "job_id": "a19b6465ea3be03f36037dd8d36215adca0013ad526d6998f8583d6c0e148e7d",
+        "job_status": "SUCCEEDED",
+        "document_page_count": 2,
+        "line_count": 51,
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "Acme Consulting - Remote Work Policy\nEffective Date: January 1, 2026 / Owner: People Operations I Version 3.2\n1. Purpose\nThis policy establishes guidelines for employees working remotely, either full-time or on a hybrid\nschedule, to ensure consistent expectations around availability, communication, data security, and\nequipment across every team at Acme Consulting. It applies to all full-time and part-time employees,\nand does not apply to independent contractors, whose remote work terms are governed separately\nby their statement of work.\n2. Eligibility\nEmployees who have completed their 90-day probationary period and whose role does not require\nregular physical presence on client premises are eligible to apply for a remote work arrangement.\nClient-facing consultants staffed on engagements that require on-site work retain a hybrid schedule\ndetermined by the engagement lead, and eligibility for those roles is reassessed at the start of each\nnew engagement.\nNew hires joining in a fully remote capacity are exempt from the 90-day waiting period, provided the\nremote arrangement was agreed upon during the offer stage and is documented in the offer letter.\n3. Core Hours and Availability\nAll remote employees must be available and responsive between 10:00 AM and 3:00 PM in their\nlocal time zone, regardless of which time zone they are working from. Outside of core hours,\nemployees may structure their schedule flexibly, provided total weekly hours meet their role's\nexpectations and any standing client meetings are attended.\nEmployees traveling across time zones for more than three consecutive business days should notify\ntheir manager in advance so that core-hour expectations can be temporarily adjusted.\n4. Equipment and Security\nThe company will provide a laptop, external monitor, and VPN access for approved remote\nemployees. All company data must remain on company-issued devices and must never be stored on\npersonal cloud storage accounts, personal email, or removable media. Employees connecting from\npublic Wi-Fi networks, such as those in cafes or airports, are required to use the company VPN at all\ntimes.\nLost or stolen equipment must be reported to IT Security within four hours of discovery so that\ndevice credentials can be revoked and remote wipe procedures initiated.\n5. Home Office Stipend\nEligible employees may claim up to $500 per year toward home office equipment such as desks,\nchairs, monitor arms, and lighting, submitted through the standard expense reimbursement process\nwith itemized receipts. Stipend claims for the current calendar year must be submitted no later than\nDecember 15, and unused stipend amounts do not roll over to the following year.\n6. Performance and Review\nAcme Consulting - Remote Work Policy - Page 1"
+          },
+          {
+            "page_number": 2,
+            "text": "Remote work arrangements are reviewed annually by the employee's manager as part of the\nstandard performance cycle, and may be modified or revoked at any time if availability,\ncommunication, or performance expectations are not being met. Managers are expected to\ndocument any concerns and provide a 30-day improvement window before revoking a remote\narrangement, except in cases involving a security policy violation.\n7. Frequently Asked Questions\n- Can I work from another country temporarily? Yes, for up to 20 business days per year with\nmanager approval and an IT Security review of the destination country's data regulations.\n- Does the home office stipend cover internet bills? No, ongoing utilities such as internet or\nelectricity are not covered by the one-time equipment stipend.\n- Who do I contact about VPN issues? IT Helpdesk, available during core hours via the internal\nsupport portal.\nAcme Consulting - Remote Work Policy - Page 2"
+          }
+        ],
+        "raw_text": "Acme Consulting - Remote Work Policy\nEffective Date: January 1, 2026 / Owner: People Operations I Version 3.2\n1. Purpose\nThis policy establishes guidelines for employees working remotely, either full-time or on a hybrid\nschedule, to ensure consistent expectations around availability, communication, data security, and\nequipment across every team at Acme Consulting. It applies to all full-time and part-time employees,\nand does not apply to independent contractors, whose remote work terms are governed separately\nby their statement of work.\n2. Eligibility\nEmployees who have completed their 90-day probationary period and whose role does not require\nregular physical presence on client premises are eligible to apply for a remote work arrangement.\nClient-facing consultants staffed on engagements that require on-site work retain a hybrid schedule\ndetermined by the engagement lead, and eligibility for those roles is reassessed at the start of each\nnew engagement.\nNew hires joining in a fully remote capacity are exempt from the 90-day waiting period, provided the\nremote arrangement was agreed upon during the offer stage and is documented in the offer letter.\n3. Core Hours and Availability\nAll remote employees must be available and responsive between 10:00 AM and 3:00 PM in their\nlocal time zone, regardless of which time zone they are working from. Outside of core hours,\nemployees may structure their schedule flexibly, provided total weekly hours meet their role's\nexpectations and any standing client meetings are attended.\nEmployees traveling across time zones for more than three consecutive business days should notify\ntheir manager in advance so that core-hour expectations can be temporarily adjusted.\n4. Equipment and Security\nThe company will provide a laptop, external monitor, and VPN access for approved remote\nemployees. All company data must remain on company-issued devices and must never be stored on\npersonal cloud storage accounts, personal email, or removable media. Employees connecting from\npublic Wi-Fi networks, such as those in cafes or airports, are required to use the company VPN at all\ntimes.\nLost or stolen equipment must be reported to IT Security within four hours of discovery so that\ndevice credentials can be revoked and remote wipe procedures initiated.\n5. Home Office Stipend\nEligible employees may claim up to $500 per year toward home office equipment such as desks,\nchairs, monitor arms, and lighting, submitted through the standard expense reimbursement process\nwith itemized receipts. Stipend claims for the current calendar year must be submitted no later than\nDecember 15, and unused stipend amounts do not roll over to the following year.\n6. Performance and Review\nAcme Consulting - Remote Work Policy - Page 1\n\nRemote work arrangements are reviewed annually by the employee's manager as part of the\nstandard performance cycle, and may be modified or revoked at any time if availability,\ncommunication, or performance expectations are not being met. Managers are expected to\ndocument any concerns and provide a 30-day improvement window before revoking a remote\narrangement, except in cases involving a security policy violation.\n7. Frequently Asked Questions\n- Can I work from another country temporarily? Yes, for up to 20 business days per year with\nmanager approval and an IT Security review of the destination country's data regulations.\n- Does the home office stipend cover internet bills? No, ongoing utilities such as internet or\nelectricity are not covered by the one-time equipment stipend.\n- Who do I contact about VPN issues? IT Helpdesk, available during core hours via the internal\nsupport portal.\nAcme Consulting - Remote Work Policy - Page 2"
+      },
+      "chunks": [
+        {
+          "content": "Acme Consulting - Remote Work Policy\nEffective Date: January 1, 2026 / Owner: People Operations I Version 3.2\n1. Purpose\nThis policy establishes guidelines for employees working remotely, either full-time or on a hybrid\nschedule, to ensure consistent expectations around availability, communication, data security, and\nequipment across every team at Acme Consulting. It applies to all full-time and part-time employees,\nand does not apply to independent contractors, whose remote work terms are governed separately\nby their statement of work.\n2. Eligibility\nEmployees who have completed their 90-day probationary period and whose role does not require\nregular physical presence on client premises are eligible to apply for a remote work arrangement.\nClient-facing consultants staffed on engagements that require on-site work retain a hybrid schedule\ndetermined by the engagement lead, and eligibility for those roles is reassessed at the start of each\nnew engagement.\nNew",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "on-site work retain a hybrid schedule\ndetermined by the engagement lead, and eligibility for those roles is reassessed at the start of each\nnew engagement.\nNew hires joining in a fully remote capacity are exempt from the 90-day waiting period, provided the\nremote arrangement was agreed upon during the offer stage and is documented in the offer letter.\n3. Core Hours and Availability\nAll remote employees must be available and responsive between 10:00 AM and 3:00 PM in their\nlocal time zone, regardless of which time zone they are working from. Outside of core hours,\nemployees may structure their schedule flexibly, provided total weekly hours meet their role's\nexpectations and any standing client meetings are attended.\nEmployees traveling across time zones for more than three consecutive business days should notify\ntheir manager in advance so that core-hour expectations can be temporarily adjusted.\n4. Equipment and Security\nThe company will provide a laptop",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "consecutive business days should notify\ntheir manager in advance so that core-hour expectations can be temporarily adjusted.\n4. Equipment and Security\nThe company will provide a laptop, external monitor, and VPN access for approved remote\nemployees. All company data must remain on company-issued devices and must never be stored on\npersonal cloud storage accounts, personal email, or removable media. Employees connecting from\npublic Wi-Fi networks, such as those in cafes or airports, are required to use the company VPN at all\ntimes.\nLost or stolen equipment must be reported to IT Security within four hours of discovery so that\ndevice credentials can be revoked and remote wipe procedures initiated.\n5. Home Office Stipend\nEligible employees may claim up to $500 per year toward home office equipment such as desks,\nchairs, monitor arms, and lighting, submitted through the standard expense reimbursement process\nwith itemized receipts.",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "toward home office equipment such as desks,\nchairs, monitor arms, and lighting, submitted through the standard expense reimbursement process\nwith itemized receipts. Stipend claims for the current calendar year must be submitted no later than\nDecember 15, and unused stipend amounts do not roll over to the following year.\n6. Performance and Review\nAcme Consulting - Remote Work Policy - Page 1",
+          "token_count": 82,
+          "page_number": 1
+        },
+        {
+          "content": "Remote work arrangements are reviewed annually by the employee's manager as part of the\nstandard performance cycle, and may be modified or revoked at any time if availability,\ncommunication, or performance expectations are not being met. Managers are expected to\ndocument any concerns and provide a 30-day improvement window before revoking a remote\narrangement, except in cases involving a security policy violation.\n7. Frequently Asked Questions\n- Can I work from another country temporarily? Yes, for up to 20 business days per year with\nmanager approval and an IT Security review of the destination country's data regulations.\n- Does the home office stipend cover internet bills? No, ongoing utilities such as internet or\nelectricity are not covered by the one-time equipment stipend.\n- Who do I contact about VPN issues? IT Helpdesk, available during core hours via the internal\nsupport portal.\nAcme Consulting - Remote Work",
+          "token_count": 182,
+          "page_number": 2
+        },
+        {
+          "content": ".\n- Who do I contact about VPN issues? IT Helpdesk, available during core hours via the internal\nsupport portal.\nAcme Consulting - Remote Work Policy - Page 2",
+          "token_count": 38,
+          "page_number": 2
+        }
+      ],
+      "name": "remote-work-policy.pdf",
+      "sha256": "0e9e0c035e0a17c2104068127c1983af7a4f873acf3a1ae8a33b4beafbcc2028",
+      "uploaded": true
+    },
+    {
+      "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/fdfcf386e7c56429-retail-supply-chain-case-study.pdf",
+      "source_id": "e1a55ae560521a75138839f9ba1918edee85822af38bc9330a8f958e3d500061",
+      "ingestion_id": "3fde10807b6ce7a00b983175ea2c8267d2fe880152db4ae949b097aecbf78985",
+      "expected_chunk_count": 5,
+      "verified_chunk_count": 5,
+      "max_encoded_tokens": 182,
+      "job_id": "cd282346e0a27bdfc1ceffe4d43937e7e048b66a5d6ca9f34f719987c161920a",
+      "job_status": "SUCCEEDED",
+      "document_page_count": 2,
+      "line_count": 50,
+      "extraction": {
+        "job_id": "cd282346e0a27bdfc1ceffe4d43937e7e048b66a5d6ca9f34f719987c161920a",
+        "job_status": "SUCCEEDED",
+        "document_page_count": 2,
+        "line_count": 50,
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "Case Study: Retail Supply Chain Optimization\nIndustry: Grocery Retail\n/\nEngagement Length: 7 months\n/\nPractice: Operations\nClient Background\nThe client is a mid-sized regional grocery retailer operating 45 stores across three states, with an\nannual revenue of approximately $310 million. The company had grown through acquisition over the\nprior decade, resulting in inconsistent inventory practices between store clusters that had originally\nbelonged to different regional chains.\nChallenge\nThe client's inventory forecasting relied on spreadsheets updated manually by each store manager,\nwith no shared visibility across locations. This led to frequent stockouts of high-demand items during\nweekend peaks and significant overstock of perishable goods early in the week, resulting in an\nestimated $2.3 million in annual waste, primarily in the produce and dairy categories.\nA secondary challenge was staff time: store managers reported spending eight to ten hours per\nweek on manual counts and reorder spreadsheets, time that could otherwise go toward\ncustomer-facing activities during a period when the client was also trying to improve in-store service\nscores.\nApproach\nOur team implemented a centralized demand forecasting system that ingests point-of-sale data\nnightly and generates automated purchase order recommendations for each store location, factoring\nin day-of-week seasonality, local weather forecasts, and historical promotional lift. We also\nintroduced a weekly variance review process so store managers could flag local anomalies, such as\na nearby competitor closing or a local event driving unusual foot traffic.\nThe rollout was phased across three regions over four months, starting with the five highest-volume\nstores to validate the forecasting model before expanding company-wide. Store managers received\ntwo half-day training sessions, and a dedicated support channel was staffed for the first six weeks\nafter each region's go-live to handle edge cases the model had not yet learned.\nA key design decision was to keep store managers in the loop rather than fully automating purchase\norders. The system generates a recommendation, but managers retain override authority, which\nsignificantly improved adoption compared to a fully automated pilot the client had attempted\ninternally two years earlier.\nResults\nWithin six months of full deployment, the client reported a 34% reduction in perishable waste and a\n19% reduction in stockout incidents on top-selling SKUs. Store managers reported spending roughly\nsix fewer hours per week on manual inventory tasks, time that store-level leadership redirected\ntoward staff coaching and customer service initiatives.\nOverride rates on system-generated purchase orders dropped from 40% in the first month to under\n12% by month five, indicating growing trust in the model's recommendations. The client's finance\nteam estimated the engagement paid for itself within the first eight months through waste reduction\nCase Study: Retail Supply Chain Optimization - Page 1"
+          },
+          {
+            "page_number": 2,
+            "text": "alone, before accounting for labor savings or reduced stockout-driven lost sales.\nNext Steps\nThe client has since asked us to extend the same forecasting approach to their newly acquired\ndistribution warehouse, and is evaluating whether to apply a similar variance-review model to\nnon-perishable categories, where waste is lower but carrying costs on overstocked slow-moving\nitems remain a concern for the finance team.\nCase Study: Retail Supply Chain Optimization - Page 2"
+          }
+        ],
+        "raw_text": "Case Study: Retail Supply Chain Optimization\nIndustry: Grocery Retail\n/\nEngagement Length: 7 months\n/\nPractice: Operations\nClient Background\nThe client is a mid-sized regional grocery retailer operating 45 stores across three states, with an\nannual revenue of approximately $310 million. The company had grown through acquisition over the\nprior decade, resulting in inconsistent inventory practices between store clusters that had originally\nbelonged to different regional chains.\nChallenge\nThe client's inventory forecasting relied on spreadsheets updated manually by each store manager,\nwith no shared visibility across locations. This led to frequent stockouts of high-demand items during\nweekend peaks and significant overstock of perishable goods early in the week, resulting in an\nestimated $2.3 million in annual waste, primarily in the produce and dairy categories.\nA secondary challenge was staff time: store managers reported spending eight to ten hours per\nweek on manual counts and reorder spreadsheets, time that could otherwise go toward\ncustomer-facing activities during a period when the client was also trying to improve in-store service\nscores.\nApproach\nOur team implemented a centralized demand forecasting system that ingests point-of-sale data\nnightly and generates automated purchase order recommendations for each store location, factoring\nin day-of-week seasonality, local weather forecasts, and historical promotional lift. We also\nintroduced a weekly variance review process so store managers could flag local anomalies, such as\na nearby competitor closing or a local event driving unusual foot traffic.\nThe rollout was phased across three regions over four months, starting with the five highest-volume\nstores to validate the forecasting model before expanding company-wide. Store managers received\ntwo half-day training sessions, and a dedicated support channel was staffed for the first six weeks\nafter each region's go-live to handle edge cases the model had not yet learned.\nA key design decision was to keep store managers in the loop rather than fully automating purchase\norders. The system generates a recommendation, but managers retain override authority, which\nsignificantly improved adoption compared to a fully automated pilot the client had attempted\ninternally two years earlier.\nResults\nWithin six months of full deployment, the client reported a 34% reduction in perishable waste and a\n19% reduction in stockout incidents on top-selling SKUs. Store managers reported spending roughly\nsix fewer hours per week on manual inventory tasks, time that store-level leadership redirected\ntoward staff coaching and customer service initiatives.\nOverride rates on system-generated purchase orders dropped from 40% in the first month to under\n12% by month five, indicating growing trust in the model's recommendations. The client's finance\nteam estimated the engagement paid for itself within the first eight months through waste reduction\nCase Study: Retail Supply Chain Optimization - Page 1\n\nalone, before accounting for labor savings or reduced stockout-driven lost sales.\nNext Steps\nThe client has since asked us to extend the same forecasting approach to their newly acquired\ndistribution warehouse, and is evaluating whether to apply a similar variance-review model to\nnon-perishable categories, where waste is lower but carrying costs on overstocked slow-moving\nitems remain a concern for the finance team.\nCase Study: Retail Supply Chain Optimization - Page 2"
+      },
+      "chunks": [
+        {
+          "content": "Case Study: Retail Supply Chain Optimization\nIndustry: Grocery Retail\n/\nEngagement Length: 7 months\n/\nPractice: Operations\nClient Background\nThe client is a mid-sized regional grocery retailer operating 45 stores across three states, with an\nannual revenue of approximately $310 million. The company had grown through acquisition over the\nprior decade, resulting in inconsistent inventory practices between store clusters that had originally\nbelonged to different regional chains.\nChallenge\nThe client's inventory forecasting relied on spreadsheets updated manually by each store manager,\nwith no shared visibility across locations. This led to frequent stockouts of high-demand items during\nweekend peaks and significant overstock of perishable goods early in the week, resulting in an\nestimated $2.3 million in annual waste, primarily in the produce and dairy categories.\nA secondary challenge was staff time: store managers reported spending eight to ten hours per\nweek on manual counts and reorder spreadshee",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "the produce and dairy categories.\nA secondary challenge was staff time: store managers reported spending eight to ten hours per\nweek on manual counts and reorder spreadsheets, time that could otherwise go toward\ncustomer-facing activities during a period when the client was also trying to improve in-store service\nscores.\nApproach\nOur team implemented a centralized demand forecasting system that ingests point-of-sale data\nnightly and generates automated purchase order recommendations for each store location, factoring\nin day-of-week seasonality, local weather forecasts, and historical promotional lift. We also\nintroduced a weekly variance review process so store managers could flag local anomalies, such as\na nearby competitor closing or a local event driving unusual foot traffic.\nThe rollout was phased across three regions over four months, starting with the five highest-volume\nstores to validate the forecasting model before expanding company-wide.",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "rollout was phased across three regions over four months, starting with the five highest-volume\nstores to validate the forecasting model before expanding company-wide. Store managers received\ntwo half-day training sessions, and a dedicated support channel was staffed for the first six weeks\nafter each region's go-live to handle edge cases the model had not yet learned.\nA key design decision was to keep store managers in the loop rather than fully automating purchase\norders. The system generates a recommendation, but managers retain override authority, which\nsignificantly improved adoption compared to a fully automated pilot the client had attempted\ninternally two years earlier.\nResults\nWithin six months of full deployment, the client reported a 34% reduction in perishable waste and a\n19% reduction in stockout incidents on top-selling SKUs. Store managers reported spending roughly\nsix fewer hours per week on manual inventory tasks, time that store",
+          "token_count": 182,
+          "page_number": 1
+        },
+        {
+          "content": "19% reduction in stockout incidents on top-selling SKUs. Store managers reported spending roughly\nsix fewer hours per week on manual inventory tasks, time that store-level leadership redirected\ntoward staff coaching and customer service initiatives.\nOverride rates on system-generated purchase orders dropped from 40% in the first month to under\n12% by month five, indicating growing trust in the model's recommendations. The client's finance\nteam estimated the engagement paid for itself within the first eight months through waste reduction\nCase Study: Retail Supply Chain Optimization - Page 1",
+          "token_count": 113,
+          "page_number": 1
+        },
+        {
+          "content": "alone, before accounting for labor savings or reduced stockout-driven lost sales.\nNext Steps\nThe client has since asked us to extend the same forecasting approach to their newly acquired\ndistribution warehouse, and is evaluating whether to apply a similar variance-review model to\nnon-perishable categories, where waste is lower but carrying costs on overstocked slow-moving\nitems remain a concern for the finance team.\nCase Study: Retail Supply Chain Optimization - Page 2",
+          "token_count": 93,
+          "page_number": 2
+        }
+      ],
+      "name": "retail-supply-chain-case-study.pdf",
+      "sha256": "fdfcf386e7c56429b01d330b8488f125b8ffcb4ef017b609efc5f6e67327e8ec",
+      "uploaded": true
+    }
+  ],
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dimension": 384,
+  "chunk_size_tokens": 180,
+  "overlap_tokens": 32,
+  "dataset_id": "1aa705294596e2c2aa181b180c152060b758b094dea73797c33c74957566a816",
+  "config": {
+    "region": "us-east-1",
+    "bucket": "bootcamp-day3-593470989370-us-east-1",
+    "domain": "vector-search-lesson",
+    "endpoint": "",
+    "index": "document-ingestion-lab"
+  },
+  "index_mapping": {
+    "created": false,
+    "version": "2.11.0",
+    "engine": "lucene",
+    "dimension": 384,
+    "index": "document-ingestion-lab"
+  },
+  "selected_ingestion_ids": [
+    "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+    "b44f766f663005e8f7b2c3299728fc9aeb98f72479bb8c351017659f39d6a16d",
+    "c29bc21432fa36732f995c30077c91e90620de55aa9589ebcbc5c6c99e6d3da0",
+    "3fde10807b6ce7a00b983175ea2c8267d2fe880152db4ae949b097aecbf78985"
+  ],
+  "verified_document_count": 4,
+  "expected_total_chunks": 22,
+  "selected_corpus_chunk_count": 22,
+  "total_index_chunk_count": 45
+}

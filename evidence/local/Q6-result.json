@@ -1,0 +1,912 @@
+{
+  "answer": "## Answer\n\n### 1. Total USD Amount of Overdue Invoices\n\nThe total USD amount of overdue invoices in the database is **$130,000.00 USD**. This represents the sum of all invoice records with a status of `'overdue'` (1 row returned, result not truncated). [SQL]\n\n---\n\n### 2. Cloud Migration Playbook — Rollback and Validation Procedures\n\n> ⚠️ **Note:** The following content is from a fictional training document and should not be treated as actual company policy.\n\n#### Rollback Procedures\nThe playbook identifies the following as a **common pitfall** to avoid, implying it as a recommended practice:\n- Engagement teams should **not skip a rollback plan for intermediate batches** — rollback planning should cover intermediate batches, not just the final cutover. [Retrieval: cloud-migration-playbook.pdf, Source 1]\n\n#### Validation Procedures (Phase 4: Validation and Cutover)\nBefore final cutover, the playbook recommends:\n- Run a **full reconciliation between source and target systems** covering **record counts** and **checksums on a sampled basis**. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- **Remediate known data quality issues identified during discovery before cutover wherever feasible**, rather than migrating them as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Retrieval: cloud-migration-playbook.pdf, Source 3] [Retrieval: cloud-migration-playbook.pdf, Source 1]",
+  "route": "both",
+  "status": "ANSWERED",
+  "sql_validation": "PASSED",
+  "sql": "SELECT SUM(amount) AS total_overdue_usd FROM invoices WHERE status = 'overdue';",
+  "execution_attempted": true,
+  "needs_confirmation": false,
+  "confirmation": null,
+  "confirmation_reasons": [],
+  "history": [
+    {
+      "question": "What is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+      "answer": "## Answer\n\n### 1. Total USD Amount of Overdue Invoices\n\nThe total USD amount of overdue invoices in the database is **$130,000.00 USD**. This represents the sum of all invoice records with a status of `'overdue'` (1 row returned, result not truncated). [SQL]\n\n---\n\n### 2. Cloud Migration Playbook — Rollback and Validation Procedures\n\n> ⚠️ **Note:** The following content is from a fictional training document and should not be treated as actual company policy.\n\n#### Rollback Procedures\nThe playbook identifies the following as a **common pitfall** to avoid, implying it as a recommended practice:\n- Engagement teams should **not skip a rollback plan for intermediate batches** — rollback planning should cover intermediate batches, not just the final cutover. [Retrieval: cloud-migration-playbook.pdf, Source 1]\n\n#### Validation Procedures (Phase 4: Validation and Cutover)\nBefore final cutover, the playbook recommends:\n- Run a **full reconciliation between source and target systems** covering **record counts** and **checksums on a sampled basis**. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- **Remediate known data quality issues identified during discovery before cutover wherever feasible**, rather than migrating them as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Retrieval: cloud-migration-playbook.pdf, Source 3] [Retrieval: cloud-migration-playbook.pdf, Source 1]"
+    }
+  ],
+  "resolved_question": "What is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+  "memory": {
+    "cap_turns": 3,
+    "cap_question_chars": 1000,
+    "cap_answer_chars": 2000,
+    "replayed_turns": 0,
+    "history_characters": 2
+  },
+  "retrieval_chunk_count": 5,
+  "sources": {
+    "sql": [
+      "SQL: SELECT SUM(amount) AS total_overdue_usd FROM invoices WHERE status = 'overdue';"
+    ],
+    "retrieval": [
+      "cloud-migration-playbook.pdf"
+    ]
+  },
+  "token_usage": {
+    "input": 7763,
+    "output": 863,
+    "known_input": 7763,
+    "known_output": 863,
+    "complete": true,
+    "records": [
+      {
+        "component": "classification",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 467,
+        "output_tokens": 57,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 467,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 57,
+          "service_tier": "standard"
+        }
+      },
+      {
+        "component": "sql_generation",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 2027,
+        "output_tokens": 28,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2027,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 28,
+          "service_tier": "standard"
+        },
+        "worker": "sql_agent"
+      },
+      {
+        "component": "sql_interpretation",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 153,
+        "output_tokens": 146,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 153,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 146,
+          "service_tier": "standard"
+        },
+        "worker": "sql_agent"
+      },
+      {
+        "component": "retrieval_generation",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 1757,
+        "output_tokens": 219,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1757,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 219,
+          "service_tier": "standard"
+        },
+        "worker": "retrieval_agent"
+      },
+      {
+        "component": "synthesis",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 3359,
+        "output_tokens": 413,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 3359,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 413,
+          "service_tier": "standard"
+        }
+      }
+    ],
+    "reported_llm_calls": 5,
+    "router_llm_calls": 1,
+    "scope": "classification, SQL generation, SQL interpretation, retrieval generation, synthesis; actual provider counts"
+  },
+  "trace_id": "9dc51101-6bd6-44ef-96ef-5ddd20aab3c7",
+  "cost_breakdown": {
+    "router_cost": 0.0024816,
+    "sql_agent_cost": 0.010065,
+    "retrieval_agent_cost": 0.0094116,
+    "synthesis_cost": 0.0178992,
+    "unclassified_cost": 0.0,
+    "currency": "USD",
+    "total_cost": 0.0398574,
+    "known_priced_subtotal_usd": 0.0398574,
+    "complete": true,
+    "cost_per_1000_queries": 39.8574,
+    "projection_note": "1000 repetitions with identical actual token volumes and the same assumed prices; not a measured future bill.",
+    "actual_reported_llm_calls": 5,
+    "actual_known_input_tokens": 7763,
+    "actual_known_output_tokens": 863,
+    "unpriced_groups": [],
+    "usage_completeness_from_orchestrator": true,
+    "records": [
+      {
+        "record_number": 1,
+        "component": "classification",
+        "group": "router",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 467,
+        "output_tokens": 57,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0024816,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      },
+      {
+        "record_number": 2,
+        "component": "sql_generation",
+        "group": "sql_agent",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 2027,
+        "output_tokens": 28,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0071511,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      },
+      {
+        "record_number": 3,
+        "component": "sql_interpretation",
+        "group": "sql_agent",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 153,
+        "output_tokens": 146,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0029139,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      },
+      {
+        "record_number": 4,
+        "component": "retrieval_generation",
+        "group": "retrieval_agent",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 1757,
+        "output_tokens": 219,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0094116,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      },
+      {
+        "record_number": 5,
+        "component": "synthesis",
+        "group": "synthesis",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 3359,
+        "output_tokens": 413,
+        "raw_billing_telemetry_present": true,
+        "pricing_errors": [],
+        "calculated_cost_usd": 0.0178992,
+        "input_per_million_usd": "3.3000",
+        "output_per_million_usd": "16.5000",
+        "profile_scope": "us"
+      }
+    ],
+    "pricing_verified_date": "2026-10-15",
+    "billing_assumptions": "Standard on-demand, uncached text inference, no private discounts, credits, tax, batch/Flex/Priority pricing or other AWS service charges. Missing raw cache/tier telemetry is disclosed; these calculated token charges are not an AWS invoice. Nonzero cache counters or a nonstandard service tier are left unpriced.",
+    "pricing_sources": [
+      "https://aws.amazon.com/bedrock/pricing/",
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
+    ],
+    "most_expensive_group": "synthesis"
+  },
+  "source_attribution_check": {
+    "passed": true,
+    "expected_labels": [
+      "Retrieval",
+      "SQL"
+    ],
+    "observed_labels": [
+      "Retrieval",
+      "SQL"
+    ],
+    "cited_source_numbers": [
+      1,
+      3
+    ],
+    "reference_errors": [],
+    "kind": "agent-label coverage and explicit document/source-reference checks; no factual entailment",
+    "factual_support_verified": false
+  },
+  "state": {
+    "question": "What is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+    "route": "both",
+    "sql_result": {
+      "success": true,
+      "answer": "## Answer Based on SQL Results\n\n### Total USD Amount of Overdue Invoices\n\nThe database shows a total of **$130,000.00 USD** in overdue invoices.\n\n- This is the complete result (not truncated)\n- This represents the sum of **all invoices** with a status of `'overdue'`\n\n---\n\n### Cloud Migration Playbook — Rollback and Validation Procedures\n\n⚠️ **This portion is outside my scope here.** No SQL query or results were provided covering the cloud migration playbook's rollback and validation procedures. That content is handled by another specialist, as noted in the question.",
+      "sources": [
+        "SQL: SELECT SUM(amount) AS total_overdue_usd FROM invoices WHERE status = 'overdue';"
+      ],
+      "metadata": {
+        "status": "ANSWERED",
+        "validation": "PASSED",
+        "row_count": 1,
+        "execution_attempted": true,
+        "token_usage": [
+          {
+            "component": "sql_generation",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 2027,
+            "output_tokens": 28,
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 2027,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "output_tokens": 28,
+              "service_tier": "standard"
+            }
+          },
+          {
+            "component": "sql_interpretation",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 153,
+            "output_tokens": 146,
+            "stop_reason": "end_turn",
+            "usage": {
+              "input_tokens": 153,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "output_tokens": 146,
+              "service_tier": "standard"
+            }
+          }
+        ],
+        "sql": "SELECT SUM(amount) AS total_overdue_usd FROM invoices WHERE status = 'overdue';",
+        "columns": [
+          "total_overdue_usd"
+        ],
+        "rows": [
+          [
+            "130000.00"
+          ]
+        ],
+        "truncated": false,
+        "answerable": true
+      }
+    },
+    "retrieval_result": {
+      "success": true,
+      "answer": "**Total USD Amount of Overdue Invoices**\n\nI cannot find this information in the provided documents.\n\n---\n\n**Rollback and Validation Procedures from the Cloud Migration Playbook**\n\nThe playbook recommends the following:\n\n**Rollback:**\n- Engagement teams should avoid skipping a rollback plan for intermediate batches, not just the final cutover. [Source 1]\n\n**Validation (Pre-Cutover):**\n- Run a full reconciliation between source and target systems covering **record counts** and **checksums on a sampled basis**. [Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Source 3]\n- Known data quality issues identified during discovery should be **remediated before cutover wherever feasible**, rather than migrated as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Source 3] [Source 1]",
+      "sources": [
+        "cloud-migration-playbook.pdf"
+      ],
+      "metadata": {
+        "draft_answer": "**Total USD Amount of Overdue Invoices**\n\nI cannot find this information in the provided documents.\n\n---\n\n**Rollback and Validation Procedures from the Cloud Migration Playbook**\n\nThe playbook recommends the following:\n\n**Rollback:**\n- Engagement teams should avoid skipping a rollback plan for intermediate batches, not just the final cutover. [Source 1]\n\n**Validation (Pre-Cutover):**\n- Run a full reconciliation between source and target systems covering **record counts** and **checksums on a sampled basis**. [Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Source 3]\n- Known data quality issues identified during discovery should be **remediated before cutover wherever feasible**, rather than migrated as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Source 3] [Source 1]",
+        "citation_check": {
+          "passed": true,
+          "cited_numbers": [
+            1,
+            3
+          ],
+          "exact_fallback": false,
+          "factual_support_verified": false,
+          "note": "Format/range heuristic only; manually verify each claim against its cited excerpt."
+        },
+        "citation_sources": [
+          {
+            "label": "Source 1",
+            "document": "cloud-migration-playbook.pdf",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+            "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-4",
+            "page_number": 2,
+            "chunk_number": 4
+          },
+          {
+            "label": "Source 3",
+            "document": "cloud-migration-playbook.pdf",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+            "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-3",
+            "page_number": 1,
+            "chunk_number": 3
+          }
+        ],
+        "token_usage": {
+          "component": "retrieval_generation",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 1757,
+          "output_tokens": 219,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 1757,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 219,
+            "service_tier": "standard"
+          }
+        },
+        "answerable": true,
+        "manual_review_required": true,
+        "status": "ANSWERED",
+        "chunks": [
+          {
+            "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-4",
+            "score": 0.7913048,
+            "chunk_number": 4,
+            "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+            "page_number": 2,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+            "content": "post-migration is typically more expensive once the data is in active use.\nCommon Pitfalls\n- Underestimating integration complexity relative to data volume during initial scoping.\n- Treating discovery as optional or compressing it to save time, which increases risk later.\n- Migrating known-bad data as-is instead of scheduling a cleansing sprint before cutover.\n- Insufficient client communication during execution, leading to avoidable stakeholder anxiety.\n- Skipping a rollback plan for intermediate batches, not just the final cutover.\nCloud Data Migration Playbook - Page 2",
+            "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-4",
+            "document_name": "cloud-migration-playbook.pdf"
+          },
+          {
+            "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-0",
+            "score": 0.77928805,
+            "chunk_number": 0,
+            "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+            "content": "Cloud Data Migration Playbook\nPractice: Technology Advisory\n/\nAudience: Engagement Leads\n/\nVersion 1.4\nOverview\nThis playbook outlines Acme Consulting's standard approach to migrating a client's on-premises\ndata infrastructure to a cloud platform. It is intended as a reference for engagement leads scoping a\nmigration workstream, not as a substitute for a client-specific migration plan, which should always be\nproduced during discovery.\nPhase 1: Discovery and Assessment\nEvery migration engagement begins with a two-to-four week discovery phase that inventories the\nclient's existing systems, data volumes, and integration points. A common mistake in early-stage\nestimates is underweighting integration complexity relative to raw data volume; a small database\nwith twenty downstream integrations is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and",
+            "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-0",
+            "document_name": "cloud-migration-playbook.pdf"
+          },
+          {
+            "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-3",
+            "score": 0.749545,
+            "chunk_number": 3,
+            "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+            "content": "with no notable progress, since\nsilence during a migration is one of the most common sources of client anxiety on these\nengagements.\nPhase 4: Validation and Cutover\nBefore final cutover, run a full reconciliation between source and target systems covering record\ncounts, checksums on a sampled basis, and functional testing of downstream reports or applications\nthat depend on the migrated data. Known data quality issues identified during discovery should be\nremediated before cutover wherever feasible, rather than migrated as-is, since fixing them\nCloud Data Migration Playbook - Page 1",
+            "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-3",
+            "document_name": "cloud-migration-playbook.pdf"
+          },
+          {
+            "id": "0ceb1ed301894dcb-b44f766f663005e8f7b2c329-0",
+            "score": 0.6915495,
+            "chunk_number": 0,
+            "ingestion_id": "b44f766f663005e8f7b2c3299728fc9aeb98f72479bb8c351017659f39d6a16d",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/05d86cecfac414f5-q2-2026-client-report.pdf",
+            "content": "Quarterly Engagement Report . Q2 2026\nPrepared for: Client Executive Sponsor\n/\nPrepared by: Engagement Lead\n/\nJuly 2026\nExecutive Summary\nThis quarter's engagement focused on completing the data migration workstream and beginning\ndiscovery for the reporting dashboard workstream. Overall the engagement remains on schedule\nand within the originally approved budget, with total spend at 48% of the annual contract value\nagainst a planned 52% at this point in the calendar.\nKey Milestones Completed\n- Legacy database schema fully mapped to the new platform, covering all 14 core tables identified\nin the Q1 discovery phase.\n- 92% of historical records migrated and validated against source-system checksums.\n- Stakeholder interviews completed for the dashboard workstream, covering finance, operations,\nand regional sales leadership.\n- Security review of the new platform's access control model completed with no critical findings.\nRisks and Mitigations\nThe remaining 8% of",
+            "document_id": "0ceb1ed301894dcb-b44f766f663005e8f7b2c329-0",
+            "document_name": "q2-2026-client-report.pdf"
+          },
+          {
+            "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-1",
+            "score": 0.6795355,
+            "chunk_number": 1,
+            "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+            "page_number": 1,
+            "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+            "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+            "content": "is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and a preliminary risk register. Engagements that skip a formal risk\nregister during discovery are disproportionately likely to encounter unplanned schedule slippage\nduring the cutover phase.\nPhase 2: Migration Strategy Selection\nThree strategies are commonly used, and the right choice depends on the client's tolerance for\ndowntime and the complexity of the source system. A lift-and-shift approach moves data with\nminimal transformation and is fastest, but carries forward any existing schema problems. A\nre-platform approach modernizes the schema during migration and is the most common choice for\nclients with known data quality issues. A parallel-run strategy operates both systems simultaneously\nfor a transition period and is recommended when downtime tolerance is near zero, such as",
+            "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-1",
+            "document_name": "cloud-migration-playbook.pdf"
+          }
+        ],
+        "chunk_count": 5,
+        "chunk_scores": [
+          0.7913048,
+          0.77928805,
+          0.749545,
+          0.6915495,
+          0.6795355
+        ],
+        "grounded": true,
+        "grounding_check_kind": "citation format/range only; manual factual review is separate"
+      }
+    },
+    "final_answer": "## Answer\n\n### 1. Total USD Amount of Overdue Invoices\n\nThe total USD amount of overdue invoices in the database is **$130,000.00 USD**. This represents the sum of all invoice records with a status of `'overdue'` (1 row returned, result not truncated). [SQL]\n\n---\n\n### 2. Cloud Migration Playbook — Rollback and Validation Procedures\n\n> ⚠️ **Note:** The following content is from a fictional training document and should not be treated as actual company policy.\n\n#### Rollback Procedures\nThe playbook identifies the following as a **common pitfall** to avoid, implying it as a recommended practice:\n- Engagement teams should **not skip a rollback plan for intermediate batches** — rollback planning should cover intermediate batches, not just the final cutover. [Retrieval: cloud-migration-playbook.pdf, Source 1]\n\n#### Validation Procedures (Phase 4: Validation and Cutover)\nBefore final cutover, the playbook recommends:\n- Run a **full reconciliation between source and target systems** covering **record counts** and **checksums on a sampled basis**. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- **Remediate known data quality issues identified during discovery before cutover wherever feasible**, rather than migrating them as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Retrieval: cloud-migration-playbook.pdf, Source 3] [Retrieval: cloud-migration-playbook.pdf, Source 1]",
+    "token_usage": {
+      "input": 7763,
+      "output": 863,
+      "known_input": 7763,
+      "known_output": 863,
+      "complete": true,
+      "records": [
+        {
+          "component": "classification",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 467,
+          "output_tokens": 57,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 467,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 57,
+            "service_tier": "standard"
+          }
+        },
+        {
+          "component": "sql_generation",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 2027,
+          "output_tokens": 28,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 2027,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 28,
+            "service_tier": "standard"
+          },
+          "worker": "sql_agent"
+        },
+        {
+          "component": "sql_interpretation",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 153,
+          "output_tokens": 146,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 153,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 146,
+            "service_tier": "standard"
+          },
+          "worker": "sql_agent"
+        },
+        {
+          "component": "retrieval_generation",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 1757,
+          "output_tokens": 219,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 1757,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 219,
+            "service_tier": "standard"
+          },
+          "worker": "retrieval_agent"
+        },
+        {
+          "component": "synthesis",
+          "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+          "input_tokens": 3359,
+          "output_tokens": 413,
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 3359,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 413,
+            "service_tier": "standard"
+          }
+        }
+      ],
+      "reported_llm_calls": 5,
+      "router_llm_calls": 1,
+      "scope": "classification, SQL generation, SQL interpretation, retrieval generation, synthesis; actual provider counts"
+    },
+    "status": "ANSWERED",
+    "executed_tools": [
+      "sql_agent",
+      "retrieval_agent"
+    ],
+    "worker_questions": {
+      "sql_agent": "Answer only the portion supported by current relational records. Another specialist handles the other portion.\nWhat is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+      "retrieval_agent": "Answer only the portion supported by indexed document content. Another specialist handles the other portion.\nWhat is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?"
+    },
+    "trace": [
+      {
+        "node": "router",
+        "route": "both",
+        "history_turns": 0,
+        "resolved_question": "What is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+        "method": "Claude classification",
+        "llm_calls": 1
+      },
+      {
+        "node": "sql_agent",
+        "action": "CALLED",
+        "success": true,
+        "status": "ANSWERED"
+      },
+      {
+        "node": "retrieval_agent",
+        "action": "CALLED",
+        "success": true,
+        "status": "ANSWERED"
+      },
+      {
+        "node": "synthesiser",
+        "received_tools": [
+          "sql_agent",
+          "retrieval_agent"
+        ],
+        "usable_tools": [
+          "sql_agent",
+          "retrieval_agent"
+        ],
+        "unavailable_tools": []
+      }
+    ],
+    "synthesis_input": {
+      "sql_agent": {
+        "success": true,
+        "usable": true,
+        "answer": "## Answer Based on SQL Results\n\n### Total USD Amount of Overdue Invoices\n\nThe database shows a total of **$130,000.00 USD** in overdue invoices.\n\n- This is the complete result (not truncated)\n- This represents the sum of **all invoices** with a status of `'overdue'`\n\n---\n\n### Cloud Migration Playbook — Rollback and Validation Procedures\n\n⚠️ **This portion is outside my scope here.** No SQL query or results were provided covering the cloud migration playbook's rollback and validation procedures. That content is handled by another specialist, as noted in the question.",
+        "sources": [
+          "SQL: SELECT SUM(amount) AS total_overdue_usd FROM invoices WHERE status = 'overdue';"
+        ],
+        "status": "ANSWERED",
+        "answerable": true,
+        "evidence": {
+          "validation": "PASSED",
+          "sql": "SELECT SUM(amount) AS total_overdue_usd FROM invoices WHERE status = 'overdue';",
+          "columns": [
+            "total_overdue_usd"
+          ],
+          "rows": [
+            [
+              "130000.00"
+            ]
+          ],
+          "row_count": 1,
+          "truncated": false
+        }
+      },
+      "retrieval_agent": {
+        "success": true,
+        "usable": true,
+        "answer": "**Total USD Amount of Overdue Invoices**\n\nI cannot find this information in the provided documents.\n\n---\n\n**Rollback and Validation Procedures from the Cloud Migration Playbook**\n\nThe playbook recommends the following:\n\n**Rollback:**\n- Engagement teams should avoid skipping a rollback plan for intermediate batches, not just the final cutover. [Source 1]\n\n**Validation (Pre-Cutover):**\n- Run a full reconciliation between source and target systems covering **record counts** and **checksums on a sampled basis**. [Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Source 3]\n- Known data quality issues identified during discovery should be **remediated before cutover wherever feasible**, rather than migrated as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Source 3] [Source 1]",
+        "sources": [
+          "cloud-migration-playbook.pdf"
+        ],
+        "status": "ANSWERED",
+        "answerable": true,
+        "evidence": {
+          "chunks": [
+            {
+              "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-4",
+              "score": 0.7913048,
+              "chunk_number": 4,
+              "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+              "page_number": 2,
+              "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+              "content": "post-migration is typically more expensive once the data is in active use.\nCommon Pitfalls\n- Underestimating integration complexity relative to data volume during initial scoping.\n- Treating discovery as optional or compressing it to save time, which increases risk later.\n- Migrating known-bad data as-is instead of scheduling a cleansing sprint before cutover.\n- Insufficient client communication during execution, leading to avoidable stakeholder anxiety.\n- Skipping a rollback plan for intermediate batches, not just the final cutover.\nCloud Data Migration Playbook - Page 2",
+              "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-4",
+              "document_name": "cloud-migration-playbook.pdf"
+            },
+            {
+              "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-0",
+              "score": 0.77928805,
+              "chunk_number": 0,
+              "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+              "page_number": 1,
+              "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+              "content": "Cloud Data Migration Playbook\nPractice: Technology Advisory\n/\nAudience: Engagement Leads\n/\nVersion 1.4\nOverview\nThis playbook outlines Acme Consulting's standard approach to migrating a client's on-premises\ndata infrastructure to a cloud platform. It is intended as a reference for engagement leads scoping a\nmigration workstream, not as a substitute for a client-specific migration plan, which should always be\nproduced during discovery.\nPhase 1: Discovery and Assessment\nEvery migration engagement begins with a two-to-four week discovery phase that inventories the\nclient's existing systems, data volumes, and integration points. A common mistake in early-stage\nestimates is underweighting integration complexity relative to raw data volume; a small database\nwith twenty downstream integrations is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and",
+              "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-0",
+              "document_name": "cloud-migration-playbook.pdf"
+            },
+            {
+              "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-3",
+              "score": 0.749545,
+              "chunk_number": 3,
+              "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+              "page_number": 1,
+              "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+              "content": "with no notable progress, since\nsilence during a migration is one of the most common sources of client anxiety on these\nengagements.\nPhase 4: Validation and Cutover\nBefore final cutover, run a full reconciliation between source and target systems covering record\ncounts, checksums on a sampled basis, and functional testing of downstream reports or applications\nthat depend on the migrated data. Known data quality issues identified during discovery should be\nremediated before cutover wherever feasible, rather than migrated as-is, since fixing them\nCloud Data Migration Playbook - Page 1",
+              "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-3",
+              "document_name": "cloud-migration-playbook.pdf"
+            },
+            {
+              "id": "0ceb1ed301894dcb-b44f766f663005e8f7b2c329-0",
+              "score": 0.6915495,
+              "chunk_number": 0,
+              "ingestion_id": "b44f766f663005e8f7b2c3299728fc9aeb98f72479bb8c351017659f39d6a16d",
+              "page_number": 1,
+              "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/05d86cecfac414f5-q2-2026-client-report.pdf",
+              "content": "Quarterly Engagement Report . Q2 2026\nPrepared for: Client Executive Sponsor\n/\nPrepared by: Engagement Lead\n/\nJuly 2026\nExecutive Summary\nThis quarter's engagement focused on completing the data migration workstream and beginning\ndiscovery for the reporting dashboard workstream. Overall the engagement remains on schedule\nand within the originally approved budget, with total spend at 48% of the annual contract value\nagainst a planned 52% at this point in the calendar.\nKey Milestones Completed\n- Legacy database schema fully mapped to the new platform, covering all 14 core tables identified\nin the Q1 discovery phase.\n- 92% of historical records migrated and validated against source-system checksums.\n- Stakeholder interviews completed for the dashboard workstream, covering finance, operations,\nand regional sales leadership.\n- Security review of the new platform's access control model completed with no critical findings.\nRisks and Mitigations\nThe remaining 8% of",
+              "document_id": "0ceb1ed301894dcb-b44f766f663005e8f7b2c329-0",
+              "document_name": "q2-2026-client-report.pdf"
+            },
+            {
+              "id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-1",
+              "score": 0.6795355,
+              "chunk_number": 1,
+              "ingestion_id": "296568cafc465f4b4f05dbbe4ecc4734ffd1950f7326d1f158d8cda69ce6988c",
+              "page_number": 1,
+              "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+              "content": "is typically a harder migration than a large database with two.\nDiscovery should produce a system inventory, a data classification summary noting any regulated or\nsensitive data categories, and a preliminary risk register. Engagements that skip a formal risk\nregister during discovery are disproportionately likely to encounter unplanned schedule slippage\nduring the cutover phase.\nPhase 2: Migration Strategy Selection\nThree strategies are commonly used, and the right choice depends on the client's tolerance for\ndowntime and the complexity of the source system. A lift-and-shift approach moves data with\nminimal transformation and is fastest, but carries forward any existing schema problems. A\nre-platform approach modernizes the schema during migration and is the most common choice for\nclients with known data quality issues. A parallel-run strategy operates both systems simultaneously\nfor a transition period and is recommended when downtime tolerance is near zero, such as",
+              "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-1",
+              "document_name": "cloud-migration-playbook.pdf"
+            }
+          ],
+          "citation_sources": [
+            {
+              "label": "Source 1",
+              "document": "cloud-migration-playbook.pdf",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+              "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-4",
+              "page_number": 2,
+              "chunk_number": 4
+            },
+            {
+              "label": "Source 3",
+              "document": "cloud-migration-playbook.pdf",
+              "source": "s3://bootcamp-day3-593470989370-us-east-1/day3-ingestion-lab/1aa705294596e2c2/e9dc3cd1bac9eee6-cloud-migration-playbook.pdf",
+              "document_id": "aeec03a7657074ac-296568cafc465f4b4f05dbbe-3",
+              "page_number": 1,
+              "chunk_number": 3
+            }
+          ],
+          "citation_check": {
+            "passed": true,
+            "cited_numbers": [
+              1,
+              3
+            ],
+            "exact_fallback": false,
+            "factual_support_verified": false,
+            "note": "Format/range heuristic only; manually verify each claim against its cited excerpt."
+          },
+          "grounding_check_kind": "citation format/range only; manual factual review is separate"
+        }
+      }
+    },
+    "synthesis_usage": [
+      {
+        "component": "synthesis",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 3359,
+        "output_tokens": 413,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 3359,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 413,
+          "service_tier": "standard"
+        }
+      }
+    ],
+    "synthesis_check": {
+      "passed": true,
+      "expected_labels": [
+        "Retrieval",
+        "SQL"
+      ],
+      "observed_labels": [
+        "Retrieval",
+        "SQL"
+      ],
+      "cited_source_numbers": [
+        1,
+        3
+      ],
+      "reference_errors": [],
+      "kind": "agent-label coverage and explicit document/source-reference checks; no factual entailment",
+      "factual_support_verified": false
+    },
+    "draft_answer": null,
+    "safe_error": null,
+    "history": [
+      {
+        "question": "What is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+        "answer": "## Answer\n\n### 1. Total USD Amount of Overdue Invoices\n\nThe total USD amount of overdue invoices in the database is **$130,000.00 USD**. This represents the sum of all invoice records with a status of `'overdue'` (1 row returned, result not truncated). [SQL]\n\n---\n\n### 2. Cloud Migration Playbook — Rollback and Validation Procedures\n\n> ⚠️ **Note:** The following content is from a fictional training document and should not be treated as actual company policy.\n\n#### Rollback Procedures\nThe playbook identifies the following as a **common pitfall** to avoid, implying it as a recommended practice:\n- Engagement teams should **not skip a rollback plan for intermediate batches** — rollback planning should cover intermediate batches, not just the final cutover. [Retrieval: cloud-migration-playbook.pdf, Source 1]\n\n#### Validation Procedures (Phase 4: Validation and Cutover)\nBefore final cutover, the playbook recommends:\n- Run a **full reconciliation between source and target systems** covering **record counts** and **checksums on a sampled basis**. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- Perform **functional testing** of downstream reports or applications that depend on the migrated data. [Retrieval: cloud-migration-playbook.pdf, Source 3]\n- **Remediate known data quality issues identified during discovery before cutover wherever feasible**, rather than migrating them as-is, since fixing them post-migration is typically more expensive once the data is in active use. [Retrieval: cloud-migration-playbook.pdf, Source 3] [Retrieval: cloud-migration-playbook.pdf, Source 1]"
+      }
+    ],
+    "incoming_history": [],
+    "resolved_question": "What is the total USD amount of overdue invoices in the database, and what rollback and validation procedures does the cloud migration playbook recommend?",
+    "classification_usage": [
+      {
+        "component": "classification",
+        "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+        "input_tokens": 467,
+        "output_tokens": 57,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 467,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 57,
+          "service_tier": "standard"
+        }
+      }
+    ],
+    "classification_ok": true,
+    "unsafe_request": false,
+    "needs_confirmation": false,
+    "memory": {
+      "cap_turns": 3,
+      "cap_question_chars": 1000,
+      "cap_answer_chars": 2000,
+      "replayed_turns": 0,
+      "history_characters": 2
+    },
+    "monitoring": {
+      "trace_id": "9dc51101-6bd6-44ef-96ef-5ddd20aab3c7",
+      "log_path": "/Users/niran/bootcamp/unit3-capstone-gold/outputs/local-agent-decisions.jsonl",
+      "cost_breakdown": {
+        "router_cost": 0.0024816,
+        "sql_agent_cost": 0.010065,
+        "retrieval_agent_cost": 0.0094116,
+        "synthesis_cost": 0.0178992,
+        "unclassified_cost": 0.0,
+        "currency": "USD",
+        "total_cost": 0.0398574,
+        "known_priced_subtotal_usd": 0.0398574,
+        "complete": true,
+        "cost_per_1000_queries": 39.8574,
+        "projection_note": "1000 repetitions with identical actual token volumes and the same assumed prices; not a measured future bill.",
+        "actual_reported_llm_calls": 5,
+        "actual_known_input_tokens": 7763,
+        "actual_known_output_tokens": 863,
+        "unpriced_groups": [],
+        "usage_completeness_from_orchestrator": true,
+        "records": [
+          {
+            "record_number": 1,
+            "component": "classification",
+            "group": "router",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 467,
+            "output_tokens": 57,
+            "raw_billing_telemetry_present": true,
+            "pricing_errors": [],
+            "calculated_cost_usd": 0.0024816,
+            "input_per_million_usd": "3.3000",
+            "output_per_million_usd": "16.5000",
+            "profile_scope": "us"
+          },
+          {
+            "record_number": 2,
+            "component": "sql_generation",
+            "group": "sql_agent",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 2027,
+            "output_tokens": 28,
+            "raw_billing_telemetry_present": true,
+            "pricing_errors": [],
+            "calculated_cost_usd": 0.0071511,
+            "input_per_million_usd": "3.3000",
+            "output_per_million_usd": "16.5000",
+            "profile_scope": "us"
+          },
+          {
+            "record_number": 3,
+            "component": "sql_interpretation",
+            "group": "sql_agent",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 153,
+            "output_tokens": 146,
+            "raw_billing_telemetry_present": true,
+            "pricing_errors": [],
+            "calculated_cost_usd": 0.0029139,
+            "input_per_million_usd": "3.3000",
+            "output_per_million_usd": "16.5000",
+            "profile_scope": "us"
+          },
+          {
+            "record_number": 4,
+            "component": "retrieval_generation",
+            "group": "retrieval_agent",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 1757,
+            "output_tokens": 219,
+            "raw_billing_telemetry_present": true,
+            "pricing_errors": [],
+            "calculated_cost_usd": 0.0094116,
+            "input_per_million_usd": "3.3000",
+            "output_per_million_usd": "16.5000",
+            "profile_scope": "us"
+          },
+          {
+            "record_number": 5,
+            "component": "synthesis",
+            "group": "synthesis",
+            "model": "arn:aws:bedrock:us-east-1:593470989370:inference-profile/us.anthropic.claude-sonnet-4-6",
+            "input_tokens": 3359,
+            "output_tokens": 413,
+            "raw_billing_telemetry_present": true,
+            "pricing_errors": [],
+            "calculated_cost_usd": 0.0178992,
+            "input_per_million_usd": "3.3000",
+            "output_per_million_usd": "16.5000",
+            "profile_scope": "us"
+          }
+        ],
+        "pricing_verified_date": "2026-10-15",
+        "billing_assumptions": "Standard on-demand, uncached text inference, no private discounts, credits, tax, batch/Flex/Priority pricing or other AWS service charges. Missing raw cache/tier telemetry is disclosed; these calculated token charges are not an AWS invoice. Nonzero cache counters or a nonstandard service tier are left unpriced.",
+        "pricing_sources": [
+          "https://aws.amazon.com/bedrock/pricing/",
+          "https://platform.claude.com/docs/en/about-claude/pricing",
+          "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
+        ],
+        "most_expensive_group": "synthesis"
+      }
+    }
+  },
+  "request_id": "local-Q6-20261015T182159013900Z"
+}

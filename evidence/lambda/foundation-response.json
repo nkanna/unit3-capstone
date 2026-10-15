@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "{\"success\": true, \"tables\": {\"clients\": 6, \"projects\": 6, \"consultants\": 8, \"invoices\": 8}, \"index\": \"document-ingestion-lab\", \"total_index_count\": 45, \"selected_document_count\": 4, \"selected_chunk_count\": 22}"
+}

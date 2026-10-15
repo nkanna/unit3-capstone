@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "mode": "local",
+  "actual_queries": 10,
+  "eight_required_cases_passed": true,
+  "ten_query_cost_summary_complete": true,
+  "gold_stretch_checks_passed": true,
+  "cloudwatch_complete": null,
+  "human_citation_review_complete": false,
+  "demo_complete": false,
+  "original_ten_queries_reexecuted": false,
+  "reused_actual_stretch_results": [
+    "memory-turn1",
+    "memory-turn2",
+    "gold-flagged"
+  ],
+  "resume_from": "/Users/niran/bootcamp/unit3-capstone-gold/outputs/local-20261015T182109202506Z"
+}

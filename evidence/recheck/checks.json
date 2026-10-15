@@ -1,0 +1,174 @@
+{
+  "actual_focused_rechecks": [
+    {
+      "mode": "local",
+      "case": "Q3",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "retrieved_chunks": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "local",
+      "case": "Q4",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "retrieved_chunks": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "local",
+      "case": "Q5",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "sql_validation_passed": true,
+        "database_execution_observed": true,
+        "retrieved_chunks": true,
+        "both_results_received_by_synthesis": true,
+        "both_agent_labels_present": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "local",
+      "case": "Q6",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "sql_validation_passed": true,
+        "database_execution_observed": true,
+        "retrieved_chunks": true,
+        "both_results_received_by_synthesis": true,
+        "both_agent_labels_present": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "local",
+      "case": "memory-turn2",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "sql_validation_passed": true,
+        "database_execution_observed": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true,
+        "no_contract_count_inferred_from_client_row": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "lambda",
+      "case": "Q3",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "retrieved_chunks": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "lambda",
+      "case": "Q4",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "retrieved_chunks": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "lambda",
+      "case": "Q5",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "sql_validation_passed": true,
+        "database_execution_observed": true,
+        "retrieved_chunks": true,
+        "both_results_received_by_synthesis": true,
+        "both_agent_labels_present": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "lambda",
+      "case": "Q6",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "sql_validation_passed": true,
+        "database_execution_observed": true,
+        "retrieved_chunks": true,
+        "both_results_received_by_synthesis": true,
+        "both_agent_labels_present": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true
+      },
+      "passed": true
+    },
+    {
+      "mode": "lambda",
+      "case": "memory-turn2",
+      "checks": {
+        "correct_route": true,
+        "only_needed_workers_called": true,
+        "answer_completed": true,
+        "sql_validation_passed": true,
+        "database_execution_observed": true,
+        "attribution_format_passed": true,
+        "expected_fixture_numbers_present": true,
+        "actual_usage_complete": true,
+        "cost_calculation_complete": true,
+        "no_contract_count_inferred_from_client_row": true
+      },
+      "passed": true
+    }
+  ]
+}

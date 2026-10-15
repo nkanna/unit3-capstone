@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "checks": {
+    "memory_answered": true,
+    "memory_acme_filter": true,
+    "memory_expected_value": true,
+    "memory_history_returned": true,
+    "memory_validated": true,
+    "pause_needs_confirmation": true,
+    "pause_no_database_execution": true,
+    "pause_validated_select": true,
+    "pause_resolved_acme_context": true,
+    "pause_exact_sql_returned": true,
+    "confirmation_answered": true,
+    "confirmation_same_exact_sql": true,
+    "confirmation_executed_after_confirmation": true,
+    "confirmation_revalidated": true,
+    "confirmation_altered_sql_rejected": true,
+    "confirmation_not_regenerated": true,
+    "confirmed_unsafe_still_blocked": true,
+    "history_overhead_measured": true
+  },
+  "turn1_input_tokens": 3020,
+  "turn2_input_tokens": 3153,
+  "turn2_minus_turn1_input_tokens": 133,
+  "turn_delta_note": "Whole-turn difference also reflects different questions/results. The controlled ablation separately measures direct history replay.",
+  "direct_history_replay_input_tokens": 84,
+  "unsafe_fixture_note": "Trusted test fixture signed by the operator, then blocked by the normal server-side validator. It is never executed."
+}

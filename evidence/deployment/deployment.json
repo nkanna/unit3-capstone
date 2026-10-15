@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "function": "multi-agent-orchestrator-nk",
+  "state": "Active",
+  "last_update_status": "Successful",
+  "runtime": "python3.12",
+  "architecture": [
+    "x86_64"
+  ],
+  "zip_sha256": "46058863f3ac2e7bbc5b906352df55c3fd206a192758f195e103e9ac1f8b4df6",
+  "confirmation_key_configured": true,
+  "database_user": "agent_reader",
+  "environment_values_disclosed": false,
+  "new_databases_or_domains_created": 0
+}
